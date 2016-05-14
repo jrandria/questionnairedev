@@ -217,6 +217,11 @@ class QuestionnaireController extends CI_Controller {
 
 	}
 
+	function getDataCategorieFromDB(){
+		$data=$this->questionModel->getAllcategorie();
+		echo json_encode($data);
+	}
+
 	function testserialize(){
 		$mondata=$this->reponsesModel->selectAllResponses();
 		$data['mondata']=$mondata;

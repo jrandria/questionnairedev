@@ -77,6 +77,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
         }
 
+        public function getAllcategorie()
+        {
+            $arr = array();
+            $query = $this->db->get('categorie');
+
+            foreach ($query->result_array() as $row)
+            {
+                $arr[]=$row;
+            }
+            return $arr;
+        }
+
         public function insertQuestion($data)
         {
             $this->db->insert('question',$data);

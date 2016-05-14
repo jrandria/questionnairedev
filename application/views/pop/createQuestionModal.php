@@ -23,13 +23,8 @@
                       </div>
                       <div class="col-lg-4">
                         <div class="form-group">
-                              <label for="exampleInputEmail1">Mots Clés</label>
+                              <label for="MotsCles">Mots Clés</label>
                               <select id="keyword" class="form-control">
-                                  <option>Accueil</option>
-                                  <option>Qualité</option>
-                                  <option>Rapidité</option>
-                                  <option>Choix</option>
-                                  <option>Prix</option>
                               </select>
                           </div>
                       </div>
@@ -44,7 +39,7 @@
                     </div>
                     <div class="row">
                       <div class="col-lg-12">
-                          <div id="champQuestion" class="form-group">
+                          <div class="form-group">
                             <label for="Telephone">Status:</label>
                                    <div id="status" class="form-group text-right">
                                       <label for="StatusActifPop">Actif</label>
@@ -96,21 +91,23 @@
           /*-----POUR LES MENUS--*/
            $("#menuDashboard").removeClass("active");//Enlever la classe qui met en rouge
            $("#menuQuestionnaires").addClass("active");//Ajouter la classe active sur le menu 
-                                                       //
+           
+           setKeywordInputValue();
+
           /*--APPEL AJAX pour les nouvelles questions dans la base de donnée---------*/
 
           $("#btnValiderPop").on('click',function(){
-             sendDataToByAjax();
+             sendDataToTableQuestionByAjax();
           });
 
-          function sendDataToByAjax(){
+          function sendDataToTableQuestionByAjax(){
              $.ajax({
               type: "POST",
               url:'QuestionnaireController/sendQuestionsToDB',
               dataType: 'json',
               data:{
                 libelle:$("#idlibelleQuestionPop").val(),
-                keywordid:1;
+                keywordid:1,
                 statusGenerale:statusGeneraleValue,
                 statusStatistiques:statusStatistiquesValue,
                 statusParticulier:statusParticuliervalue,
@@ -122,21 +119,30 @@
             });
           }
 
+          function setKeywordInputValue(){
+             $.getJSON( "getDataCategorieFromDB", function( data ) {
+              console.log(data);
+                      $.each(data, function(index, value) {
+                          $( '<option value="'+ data[index].motscles+'">'+data[index].motscles+'</option>"').appendTo( "#keyword" );
+                      });
+              });
+          }
+
           function getAllStatusValue(){
 
           }
-
-          $( "#champQuestion" ).select(function() {
-              alert( "Handler for .select() called." );
-          });
-
-          $("#status").append('')
 
           $("#btnAddQuestion").on('click',function(){
               openModal();
           });
 
-           /*------FONCTIONS POUR LES MODIFICATIONS DES CHECKBOXS---*/
+          /*------FONCTIONS POUR LES MODIFICATIONS DU SELECT DANS POP---*/
+
+          $('#keyword').on('change', function() {
+            alert( this.value ); // or $(this).val()
+          });
+
+           /*------FONCTIONS POUR LES MODIFICATIONS DES CHECKBOXS DANS POP---*/
 
           $('input[type=checkbox]').on('change', function() { 
             var id=this.id;
@@ -164,9 +170,7 @@
                     break;
                 default:
                   return 0;
-          }
-
-             alert('Activé:Appel à AJAX pour '+id);
+            }
              /*
              var url="questionnaire/updateQuestionnaire";
              $.ajax({
