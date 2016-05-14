@@ -77,7 +77,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
         }
 
-        public function insertQuestion()
+        public function insertQuestion($data)
         {
             $this->db->insert('question',$data);
             $data = array(

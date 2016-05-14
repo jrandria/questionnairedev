@@ -21,13 +21,7 @@
 	 <div class="warper">
         	
                 <hr class="no-margn">
-            
-             <pre>
-			  	<?php 
-				  print_r($resultatArray);
-
-				?>
-			  </pre>
+                
             <div class="row">
             
                 <div class="col-md-12">

@@ -38,13 +38,13 @@
                       <div class="col-lg-8">
                         <div class="form-group">
                               <label for="libelleQuestion">Question</label>
-                              <input id="champQuestion" type="text" class="form-control" placeholder="">
+                              <input  id="idlibelleQuestionPop" type="text" class="form-control" placeholder="">
                         </div>
                       </div>                      
                     </div>
                     <div class="row">
                       <div class="col-lg-12">
-                          <div class="form-group">
+                          <div id="champQuestion" class="form-group">
                             <label for="Telephone">Status:</label>
                                    <div id="status" class="form-group text-right">
                                       <label for="StatusActifPop">Actif</label>
@@ -79,12 +79,18 @@
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
-                  <button type="button" class="btn btn-primary">Valider</button>
+                  <button id="btnValiderPop" type="button" class="btn btn-primary">Valider</button>
                 </div>
               </div>
             </div>
           </div>
           <script type="text/javascript">
+          /*--------LES VARIABLES UTILES--------*/
+          var statusGeneraleValue=0;
+          var statusStatistiquesValue=0;
+          var statusParticuliervalue=0;
+          var statusProfessionnelValue=0;
+
         $(document).ready(function($){
 
           /*-----POUR LES MENUS--*/
@@ -92,43 +98,74 @@
            $("#menuQuestionnaires").addClass("active");//Ajouter la classe active sur le menu 
                                                        //
           /*--APPEL AJAX pour les nouvelles questions dans la base de donnée---------*/
-           $.ajax({
+
+          $("#btnValiderPop").on('click',function(){
+             sendDataToByAjax();
+          });
+
+          function sendDataToByAjax(){
+             $.ajax({
               type: "POST",
               url:'QuestionnaireController/sendQuestionsToDB',
               dataType: 'json',
-              success: function(question) {
-                var question = data['#champQuestion'];
+              data:{
+                libelle:$("#idlibelleQuestionPop").val(),
+                keywordid:1;
+                statusGenerale:statusGeneraleValue,
+                statusStatistiques:statusStatistiquesValue,
+                statusParticulier:statusParticuliervalue,
+                statusProfessionnel:statusProfessionnelValue
+              },
+              success: function(data) {
+                
               }
             });
+          }
 
-           $( "#champQuestion" ).select(function() {
+          function getAllStatusValue(){
+
+          }
+
+          $( "#champQuestion" ).select(function() {
               alert( "Handler for .select() called." );
-            });
+          });
 
-           $("#status").append('')
+          $("#status").append('')
 
-          // $("#tbodyQuestionsTables").
-           
-           /*----POUR LEBOUTON AJOUT DE QUESTION----*/
-           $("#btnAddQuestion").on('click',function(){
+          $("#btnAddQuestion").on('click',function(){
               openModal();
-           });
-
+          });
 
            /*------FONCTIONS POUR LES MODIFICATIONS DES CHECKBOXS---*/
 
           $('input[type=checkbox]').on('change', function() { 
             var id=this.id;
+            var isChecked=this.checked?1:0;
 
-            if (this.checked) {
-                updateDataIfCheckBoxCheked(id);
+            getSwitchButtonValueChecked(id,isChecked);
+
               return;
-
-             }
-                updateDataIfCheckBoxUnchecked(id);
           });
 
-          function updateDataIfCheckBoxCheked(id){
+          function getSwitchButtonValueChecked(id,isChecked){
+
+             switch(id) {
+                case 'switch-button-actifsPop':
+                    statusGeneraleValue=isChecked;
+                    break;
+                case 'switch-button-statsPop':
+                    statusStatistiques=isChecked;
+                    break;
+                case 'switch-button-statsPop':
+                    statusProfessionnel=isChecked;
+                    break;
+                case 'switch-button-statsPop':
+                    statusParticulier=isChecked;
+                    break;
+                default:
+                  return 0;
+          }
+
              alert('Activé:Appel à AJAX pour '+id);
              /*
              var url="questionnaire/updateQuestionnaire";
@@ -143,20 +180,6 @@
                   notie.alert(1, 'Questionnaire envoyé avec succès!',2);
                   console.log(result);
               }*/
-          }
-
-
-          function isCheckBoxChecked(status){
-              var valRetourne='';
-               if(status==1){
-                      valRetourne = 'checked';
-                }
-              return valRetourne;        
-          }
-
-
-          function updateDataIfCheckBoxUnchecked(id){
-             alert('desactivé:Appel à AJAX pour'+id);
           }
 
           function openModal(){

@@ -61,6 +61,7 @@ $route['questionsclients']='QuestionnaireController/load_questions_clients';
 $route['questionspro']='QuestionnaireController/load_questions_pro';
 $route['validateResponses']='QuestionnaireController/validate_responses';
 $route['sendresponses']='QuestionnaireController/submitallclientresponses';
+$route['testserialize']= 'QuestionnaireController/testserialize';
 $route['index_admin']= 'auth/index';
 $route['modifications']='QuestionnaireController/load_modifications';
 $route['utilisateur']='QuestionnaireController/load_modif_utilisateur';

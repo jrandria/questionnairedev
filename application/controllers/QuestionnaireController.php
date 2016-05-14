@@ -110,7 +110,7 @@ class QuestionnaireController extends CI_Controller {
 			$reponses[]=$this->input->post('reponse'.$i);
 		}
 
-		$satisf=$this->isClientSatisfied($dataTest,$reponses)?1:0;
+		$satisf=$this->util->isClientSatisfied($dataTest,$reponses)?1:0;
 
 		$dataResponses = array(
 			'idQuestions' => serialize($dataidquestions),
@@ -145,8 +145,7 @@ class QuestionnaireController extends CI_Controller {
 		$idClient=$this->reponsesModel->insertClient($dataClient);
 
 		//On insère les réponses
-
-		$dataResponsesToInsert=$this->array_insert_associative($dataResponsesFlash,array('idClient' => $idClient),2);
+		$dataResponsesToInsert=$this->util->array_insert_associative($dataResponsesFlash,array('idClient' => $idClient),2);
 
 		//print_r($dataResponsesToInsert);
 
@@ -156,40 +155,6 @@ class QuestionnaireController extends CI_Controller {
 
 	}
 
-
-	function isClientSatisfied($dataTest,$data){
-
-		$valBool=TRUE;
-
-		foreach ($dataTest as $key) {
-			if(in_array($key,$data)){
-				$valBool=FALSE;
-			}
-		}
-				
-		return $valBool;
-	}
-
-
-	function array_insert_numeric(&$array, $position, $insert)
-	{
-	    if (is_int($position)) {
-	        array_splice($array, $position, 0, $insert);
-	    } else {
-	        $pos   = array_search($position, array_keys($array));
-	        $array = array_merge(
-	            array_slice($array, 0, $pos),
-	            $insert,
-	            array_slice($array, $pos)
-	        );
-	    }
-	}
-
-	function array_insert_associative(&$array,$values,$offset) {
-
-    	return array_slice($array, 0, $offset, true) + $values + array_slice($array, $offset, NULL, true);
-
-	}
 
 	function redirectUser($valCase){
 		//Je nettoie tout avant tout redirection
@@ -206,11 +171,6 @@ class QuestionnaireController extends CI_Controller {
 
 	function insertNewQuestion($question){
 
-		$question=new Question();
-		$data=$question->getQuestionTab();
-
-		$this->db->set($data);
-		$this->db->insert('question');
 
 	}
 
@@ -255,6 +215,12 @@ class QuestionnaireController extends CI_Controller {
 		echo json_encode($data);
 		
 
+	}
+
+	function testserialize(){
+		$mondata=$this->reponsesModel->selectAllResponses();
+		$data['mondata']=$mondata;
+		$this->loadPage('pagetest',0,$data);
 	}
 
 	/**
