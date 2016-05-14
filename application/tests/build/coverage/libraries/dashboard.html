@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for C:\xampp\htdocs\Dev_StageEric\questionnaireJean\application/libraries</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <link href="../css/nv.d3.min.css" rel="stylesheet">
+  <link href="../css/style.css" rel="stylesheet">
+  <!--[if lt IE 9]>
+  <script src="../js/html5shiv.min.js"></script>
+  <script src="../js/respond.min.js"></script>
+  <![endif]-->
+ </head>
+ <body>
+  <header>
+   <div class="container">
+    <div class="row">
+     <div class="col-md-12">
+      <ol class="breadcrumb">
+        <li><a href="../index.html">C:\xampp\htdocs\Dev_StageEric\questionnaireJean\application</a></li>
+        <li><a href="index.html">libraries</a></li>
+        <li class="active">(Dashboard)</li>
+
+      </ol>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Reponse.php.html#10">Reponse</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Remarque.php.html#3">Remarque</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Question.php.html#3">Question</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Pro.php.html#3">Pro</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Bcrypt.php.html#4">Bcrypt</a></td><td class="text-right">6%</td></tr>
+       <tr><td><a href="Ion_auth.php.html#24">Ion_auth</a></td><td class="text-right">7%</td></tr>
+       <tr><td><a href="user.php.html#2">User</a></td><td class="text-right">8%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Ion_auth.php.html#24">Ion_auth</a></td><td class="text-right">2077</td></tr>
+       <tr><td><a href="Bcrypt.php.html#4">Bcrypt</a></td><td class="text-right">347</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Remarque.php.html#41"><abbr title="Remarque::_setNote">_setNote</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Remarque.php.html#29"><abbr title="Remarque::getNote">getNote</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Remarque.php.html#53"><abbr title="Remarque::getIdRemarque">getIdRemarque</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Remarque.php.html#65"><abbr title="Remarque::_setIdRemarque">_setIdRemarque</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Reponse.php.html#43"><abbr title="Reponse::getIdReponse">getIdReponse</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Reponse.php.html#25"><abbr title="Reponse::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Remarque.php.html#15"><abbr title="Remarque::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Question.php.html#247"><abbr title="Question::_setQuestionTab">_setQuestionTab</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Question.php.html#183"><abbr title="Question::_setMotsClesAssocies">_setMotsClesAssocies</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Question.php.html#171"><abbr title="Question::getMotsClesAssocies">getMotsClesAssocies</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Question.php.html#200"><abbr title="Question::setAllValue">setAllValue</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Question.php.html#214"><abbr title="Question::getAllValue">getAllValue</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Question.php.html#235"><abbr title="Question::getQuestionTab">getQuestionTab</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Reponse.php.html#55"><abbr title="Reponse::_setIdReponse">_setIdReponse</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Reponse.php.html#67"><abbr title="Reponse::getIdQuestion">getIdQuestion</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="user.php.html#28"><abbr title="User::setName">setName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="user.php.html#24"><abbr title="User::getName">getName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="user.php.html#32"><abbr title="User::getPassword">getPassword</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="user.php.html#36"><abbr title="User::setPassword">setPassword</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="user.php.html#45"><abbr title="User::affichePassword">affichePassword</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="user.php.html#40"><abbr title="User::__toString">__toString</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="user.php.html#20"><abbr title="User::setId">setId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="user.php.html#15"><abbr title="User::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Reponse.php.html#91"><abbr title="Reponse::getValeur">getValeur</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Reponse.php.html#79"><abbr title="Reponse::_setIdQuestion">_setIdQuestion</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Reponse.php.html#103"><abbr title="Reponse::_setValeur">_setValeur</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Reponse.php.html#115"><abbr title="Reponse::getIdClient">getIdClient</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Reponse.php.html#127"><abbr title="Reponse::_setIdClient">_setIdClient</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Question.php.html#159"><abbr title="Question::_setStatusProfessionnel">_setStatusProfessionnel</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Question.php.html#147"><abbr title="Question::getStatusProfessionnel">getStatusProfessionnel</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Ion_auth.php.html#265"><abbr title="Ion_auth::forgotten_password_check">forgotten_password_check</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Ion_auth.php.html#200"><abbr title="Ion_auth::forgotten_password_complete">forgotten_password_complete</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Ion_auth.php.html#301"><abbr title="Ion_auth::register">register</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Ion_auth.php.html#393"><abbr title="Ion_auth::logout">logout</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Ion_auth.php.html#457"><abbr title="Ion_auth::get_user_id">get_user_id</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Ion_auth.php.html#139"><abbr title="Ion_auth::forgotten_password">forgotten_password</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Ion_auth.php.html#98"><abbr title="Ion_auth::__call">__call</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Bcrypt.php.html#39"><abbr title="Bcrypt::verify">verify</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Bcrypt.php.html#24"><abbr title="Bcrypt::hash">hash</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Bcrypt.php.html#44"><abbr title="Bcrypt::getSalt">getSalt</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Bcrypt.php.html#61"><abbr title="Bcrypt::getRandomBytes">getRandomBytes</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Bcrypt.php.html#105"><abbr title="Bcrypt::encodeBytes">encodeBytes</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Ion_auth.php.html#474"><abbr title="Ion_auth::is_admin">is_admin</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Ion_auth.php.html#493"><abbr title="Ion_auth::in_group">in_group</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Question.php.html#99"><abbr title="Question::getStatusGenerale">getStatusGenerale</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Question.php.html#87"><abbr title="Question::_setCategorieId">_setCategorieId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Question.php.html#111"><abbr title="Question::_setStatusGenerale">_setStatusGenerale</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Question.php.html#123"><abbr title="Question::getStatusParticulier">getStatusParticulier</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Question.php.html#135"><abbr title="Question::_setStatusParticulier">_setStatusParticulier</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Question.php.html#75"><abbr title="Question::getCategorieId">getCategorieId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Question.php.html#63"><abbr title="Question::_setLibelle">_setLibelle</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Question.php.html#15"><abbr title="Question::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Pro.php.html#5"><abbr title="Pro::show_hello_world">show_hello_world</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Question.php.html#27"><abbr title="Question::getIdQuestion">getIdQuestion</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Question.php.html#39"><abbr title="Question::_setIdQuestion">_setIdQuestion</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Question.php.html#51"><abbr title="Question::getLibelle">getLibelle</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Ion_auth.php.html#59"><abbr title="Ion_auth::__construct">__construct</abbr></a></td><td class="text-right">77%</td></tr>
+       <tr><td><a href="Bcrypt.php.html#14"><abbr title="Bcrypt::__construct">__construct</abbr></a></td><td class="text-right">80%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Bcrypt.php.html#61"><abbr title="Bcrypt::getRandomBytes">getRandomBytes</abbr></a></td><td class="text-right">132</td></tr>
+       <tr><td><a href="Ion_auth.php.html#493"><abbr title="Ion_auth::in_group">in_group</abbr></a></td><td class="text-right">72</td></tr>
+       <tr><td><a href="Ion_auth.php.html#301"><abbr title="Ion_auth::register">register</abbr></a></td><td class="text-right">56</td></tr>
+       <tr><td><a href="Ion_auth.php.html#393"><abbr title="Ion_auth::logout">logout</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="Ion_auth.php.html#200"><abbr title="Ion_auth::forgotten_password_complete">forgotten_password_complete</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Ion_auth.php.html#139"><abbr title="Ion_auth::forgotten_password">forgotten_password</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Ion_auth.php.html#265"><abbr title="Ion_auth::forgotten_password_check">forgotten_password_check</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Ion_auth.php.html#98"><abbr title="Ion_auth::__call">__call</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Bcrypt.php.html#105"><abbr title="Bcrypt::encodeBytes">encodeBytes</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Ion_auth.php.html#59"><abbr title="Ion_auth::__construct">__construct</abbr></a></td><td class="text-right">7</td></tr>
+       <tr><td><a href="Bcrypt.php.html#24"><abbr title="Bcrypt::hash">hash</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Ion_auth.php.html#457"><abbr title="Ion_auth::get_user_id">get_user_id</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Bcrypt.php.html#14"><abbr title="Bcrypt::__construct">__construct</abbr></a></td><td class="text-right">2</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="http://github.com/sebastianbergmann/php-code-coverage" target="_top">PHP_CodeCoverage 2.2.4</a> using <a href="https://secure.php.net/" target="_top">PHP 5.5.8</a> and <a href="http://phpunit.de/">PHPUnit 4.1.6</a> at Mon May 9 2:10:48 CEST 2016.</small>
+    </p>
+   </footer>
+  </div>
+  <script src="../js/jquery.min.js" type="text/javascript"></script>
+  <script src="../js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="../js/holder.min.js" type="text/javascript"></script>
+  <script src="../js/d3.min.js" type="text/javascript"></script>
+  <script src="../js/nv.d3.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#classCoverageDistribution svg')
+      .datum(getCoverageDistributionData([4,3,0,0,0,0,0,0,0,0,0,1], "Class Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#methodCoverageDistribution svg')
+      .datum(getCoverageDistributionData([56,0,0,0,0,0,0,0,1,1,0,3], "Method Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getCoverageDistributionData(data, label) {
+    var labels = [
+      '0%',
+      '0-10%',
+      '10-20%',
+      '20-30%',
+      '30-40%',
+      '40-50%',
+      '50-60%',
+      '60-70%',
+      '70-80%',
+      '80-90%',
+      '90-100%',
+      '100%'
+    ];
+    var values = [];
+    $.each(labels, function(key) {
+      values.push({x: labels[key], y: data[key]});
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(key, y, e, graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+    d3.select('#classComplexity svg')
+      .datum(getComplexityData([[6.4516129032258,20,"<a href=\"Bcrypt.php.html#4\">Bcrypt<\/a>"],[100,0,"<a href=\"Client.php.html#5\">Client<\/a>"],[7.981220657277,51,"<a href=\"Ion_auth.php.html#24\">Ion_auth<\/a>"],[0,1,"<a href=\"Pro.php.html#3\">Pro<\/a>"],[0,19,"<a href=\"Question.php.html#3\">Question<\/a>"],[0,5,"<a href=\"Remarque.php.html#3\">Remarque<\/a>"],[0,9,"<a href=\"Reponse.php.html#10\">Reponse<\/a>"],[8.3333333333333,9,"<a href=\"user.php.html#2\">User<\/a>"]], 'Class Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(key, y, e, graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Method Complexity');
+
+    d3.select('#methodComplexity svg')
+      .datum(getComplexityData([[80,2,"<a href=\"Bcrypt.php.html#14\">Bcrypt::__construct<\/a>"],[0,2,"<a href=\"Bcrypt.php.html#24\">Bcrypt::hash<\/a>"],[0,1,"<a href=\"Bcrypt.php.html#39\">Bcrypt::verify<\/a>"],[0,1,"<a href=\"Bcrypt.php.html#44\">Bcrypt::getSalt<\/a>"],[0,11,"<a href=\"Bcrypt.php.html#61\">Bcrypt::getRandomBytes<\/a>"],[0,3,"<a href=\"Bcrypt.php.html#105\">Bcrypt::encodeBytes<\/a>"],[77.777777777778,7,"<a href=\"Ion_auth.php.html#59\">Ion_auth::__construct<\/a>"],[0,4,"<a href=\"Ion_auth.php.html#98\">Ion_auth::__call<\/a>"],[100,1,"<a href=\"Ion_auth.php.html#126\">Ion_auth::__get<\/a>"],[0,5,"<a href=\"Ion_auth.php.html#139\">Ion_auth::forgotten_password<\/a>"],[0,5,"<a href=\"Ion_auth.php.html#200\">Ion_auth::forgotten_password_complete<\/a>"],[0,4,"<a href=\"Ion_auth.php.html#265\">Ion_auth::forgotten_password_check<\/a>"],[0,7,"<a href=\"Ion_auth.php.html#301\">Ion_auth::register<\/a>"],[0,6,"<a href=\"Ion_auth.php.html#393\">Ion_auth::logout<\/a>"],[100,1,"<a href=\"Ion_auth.php.html#444\">Ion_auth::logged_in<\/a>"],[0,2,"<a href=\"Ion_auth.php.html#457\">Ion_auth::get_user_id<\/a>"],[0,1,"<a href=\"Ion_auth.php.html#474\">Ion_auth::is_admin<\/a>"],[0,8,"<a href=\"Ion_auth.php.html#493\">Ion_auth::in_group<\/a>"],[0,1,"<a href=\"Pro.php.html#5\">Pro::show_hello_world<\/a>"],[0,1,"<a href=\"Question.php.html#15\">Question::__construct<\/a>"],[0,1,"<a href=\"Question.php.html#27\">Question::getIdQuestion<\/a>"],[0,1,"<a href=\"Question.php.html#39\">Question::_setIdQuestion<\/a>"],[0,1,"<a href=\"Question.php.html#51\">Question::getLibelle<\/a>"],[0,1,"<a href=\"Question.php.html#63\">Question::_setLibelle<\/a>"],[0,1,"<a href=\"Question.php.html#75\">Question::getCategorieId<\/a>"],[0,1,"<a href=\"Question.php.html#87\">Question::_setCategorieId<\/a>"],[0,1,"<a href=\"Question.php.html#99\">Question::getStatusGenerale<\/a>"],[0,1,"<a href=\"Question.php.html#111\">Question::_setStatusGenerale<\/a>"],[0,1,"<a href=\"Question.php.html#123\">Question::getStatusParticulier<\/a>"],[0,1,"<a href=\"Question.php.html#135\">Question::_setStatusParticulier<\/a>"],[0,1,"<a href=\"Question.php.html#147\">Question::getStatusProfessionnel<\/a>"],[0,1,"<a href=\"Question.php.html#159\">Question::_setStatusProfessionnel<\/a>"],[0,1,"<a href=\"Question.php.html#171\">Question::getMotsClesAssocies<\/a>"],[0,1,"<a href=\"Question.php.html#183\">Question::_setMotsClesAssocies<\/a>"],[0,1,"<a href=\"Question.php.html#200\">Question::setAllValue<\/a>"],[0,1,"<a href=\"Question.php.html#214\">Question::getAllValue<\/a>"],[0,1,"<a href=\"Question.php.html#235\">Question::getQuestionTab<\/a>"],[0,1,"<a href=\"Question.php.html#247\">Question::_setQuestionTab<\/a>"],[0,1,"<a href=\"Remarque.php.html#15\">Remarque::__construct<\/a>"],[0,1,"<a href=\"Remarque.php.html#29\">Remarque::getNote<\/a>"],[0,1,"<a href=\"Remarque.php.html#41\">Remarque::_setNote<\/a>"],[0,1,"<a href=\"Remarque.php.html#53\">Remarque::getIdRemarque<\/a>"],[0,1,"<a href=\"Remarque.php.html#65\">Remarque::_setIdRemarque<\/a>"],[0,1,"<a href=\"Reponse.php.html#25\">Reponse::__construct<\/a>"],[0,1,"<a href=\"Reponse.php.html#43\">Reponse::getIdReponse<\/a>"],[0,1,"<a href=\"Reponse.php.html#55\">Reponse::_setIdReponse<\/a>"],[0,1,"<a href=\"Reponse.php.html#67\">Reponse::getIdQuestion<\/a>"],[0,1,"<a href=\"Reponse.php.html#79\">Reponse::_setIdQuestion<\/a>"],[0,1,"<a href=\"Reponse.php.html#91\">Reponse::getValeur<\/a>"],[0,1,"<a href=\"Reponse.php.html#103\">Reponse::_setValeur<\/a>"],[0,1,"<a href=\"Reponse.php.html#115\">Reponse::getIdClient<\/a>"],[0,1,"<a href=\"Reponse.php.html#127\">Reponse::_setIdClient<\/a>"],[100,1,"<a href=\"user.php.html#10\">User::__construct<\/a>"],[0,1,"<a href=\"user.php.html#15\">User::getId<\/a>"],[0,1,"<a href=\"user.php.html#20\">User::setId<\/a>"],[0,1,"<a href=\"user.php.html#24\">User::getName<\/a>"],[0,1,"<a href=\"user.php.html#28\">User::setName<\/a>"],[0,1,"<a href=\"user.php.html#32\">User::getPassword<\/a>"],[0,1,"<a href=\"user.php.html#36\">User::setPassword<\/a>"],[0,1,"<a href=\"user.php.html#40\">User::__toString<\/a>"],[0,1,"<a href=\"user.php.html#45\">User::affichePassword<\/a>"]], 'Method Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getComplexityData(data, label) {
+    var values = [];
+    $.each(data, function(key) {
+      var value = Math.round(data[key][0]*100) / 100;
+      values.push({
+        x: value,
+        y: data[key][1],
+        class: data[key][2],
+        size: 0.05,
+        shape: 'diamond'
+      });
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+});
+  </script>
+ </body>
+</html>
