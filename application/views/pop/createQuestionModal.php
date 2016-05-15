@@ -88,6 +88,7 @@
 
         $(document).ready(function($){
 
+
           /*-----POUR LES MENUS--*/
            $("#menuDashboard").removeClass("active");//Enlever la classe qui met en rouge
            $("#menuQuestionnaires").addClass("active");//Ajouter la classe active sur le menu 
