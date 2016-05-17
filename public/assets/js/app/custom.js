@@ -17,6 +17,8 @@ var repQuestion4;
 var repQuestion5;
 var tableauxValeursStars = [];
 var tableauxStars = new Object(); //Tableaux associatif
+                                  //
+                                  //
 $(function() {
     /********************************
     Fonctions pour les notes en étoiles

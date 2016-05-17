@@ -91,15 +91,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
         public function insertQuestion($data)
         {
-            $this->db->insert('question',$data);
-            $data = array(
-               'libelle' => 'libelle' ,
-               'keywordid' => 'keywordid' ,
-               'statusGenerale' => 'actif',
-               'statusStatistiques' => 'statusStatistiques',
-               'statusParticulier' => 'statusParticulier',
-               'statusProfessionnel' => 'statusProfessionnel'
-            );
+            $boolVal=TRUE;
+            if(!$this->db->insert('question',$data)){
+                return $boolVal=FALSE;
+            }
+            return $boolVal;
 
         }
 

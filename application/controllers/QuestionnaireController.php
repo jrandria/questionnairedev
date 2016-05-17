@@ -210,9 +210,17 @@ class QuestionnaireController extends CI_Controller {
 
 	function sendQuestionsToDB(){
 
-		$data=$this->questionModel->insertQuestion();
-
-		echo json_encode($data);
+		
+		$data = array(
+			'libelle'  => $this->input->post('libelle'),
+			'keywordid' => $this->input->post('keywordid'),
+			'statusGenerale' => $this->input->post('statusGenerale'),
+			'statusStatistiques' => $this->input->post('statusStatistiques'),
+			'statusParticulier' => $this->input->post('statusParticulier'),
+			'statusProfessionnel' => $this->input->post('statusProfessionnel')
+		);
+		$dataRet=$this->questionModel->insertQuestion($data);
+		echo json_encode($dataRet);
 		
 
 	}

@@ -32,7 +32,7 @@
                                   
                                       <div class="panel panel-default tab-pane tabs-up active" id="questions">
                                           <div class="panel-body">
-                                        <table class="table table-bordered  table-striped">
+                                        <table id="tableListeQuestions" class="table table-bordered  table-striped">
 
                                                 <thead>
                                                       <tr>
@@ -162,7 +162,12 @@
 
                   i++;
               });
+               $('#tableListeQuestions').dataTable();
+              },
+              error: function() {
+                  alert('Erreur de récupération des données!');
               }
+
             });
            
 

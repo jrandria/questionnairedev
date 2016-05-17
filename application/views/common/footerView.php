@@ -41,7 +41,9 @@
     <script src="<?php echo base_url('public/assets/js/plugins/bootstrap-chosen/chosen.jquery.js'); ?>"></script>
 
     <!-- Moment js-->
-    <script type="text/javascript" src="<?php echo base_url('public/assets/js/plugins/moment/moment.js'); ?>"></script> 
+    
+    <script type="text/javascript" src="<?php echo base_url('public/assets/js/plugins/moment/moment-fr.min.js'); ?>"></script> 
+    <script type="text/javascript" src="<?php echo base_url('public/assets/js/plugins/date/date-fr-FR.js'); ?>"></script> 
     
     <!-- Calendar JS -->
     <script type="text/javascript" src="<?php echo base_url('public/assets/js/plugins/calendar/calendar.js'); ?>"></script>
@@ -73,7 +75,7 @@
 
     <!-- Custom JQuery -->
     <script type="text/javascript" src="<?php echo base_url('public/assets/js/app/custom.js'); ?>"></script>
-    
+    <script type="text/javascript" src="<?php echo base_url('public/assets/js/app/app.js'); ?>"></script>
 
 
 </body>

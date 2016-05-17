@@ -66,5 +66,6 @@ $route['index_admin']= 'auth/index';
 $route['modifications']='QuestionnaireController/load_modifications';
 $route['utilisateur']='QuestionnaireController/load_modif_utilisateur';
 $route['getDataCategorieFromDB']='QuestionnaireController/getDataCategorieFromDB';
+$route['sendQuestionsToDB']='QuestionnaireController/sendQuestionsToDB';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
