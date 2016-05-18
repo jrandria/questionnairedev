@@ -23,14 +23,14 @@
                             <div class="col-lg-12">
                                <!--<div class="panel panel-primary">-->
                                 <ul class="nav nav-tabs" role="tablist">
-                                    <li class="active"><a href="#questions" role="tab" data-toggle="tab">Questions</a></li>
-                                    <li><a href="#reponses" role="tab" data-toggle="tab">Reponses</a></li>
-                                    <li><a href="#categories" role="tab" data-toggle="tab">categories</a></li>
+                                    <li class="active"><a href="#tabQuestions" role="tab" data-toggle="tab">Questions</a></li>
+                                    <li><a href="#tabReponses" role="tab" data-toggle="tab">Reponses</a></li>
+                                    <li><a href="#tabCategories" role="tab" data-toggle="tab">categories</a></li>
                                   </ul>
                     
                                   <div class="tab-content">
                                   
-                                      <div class="panel panel-default tab-pane tabs-up active" id="questions">
+                                      <div class="panel panel-default tab-pane tabs-up active" id="tabQuestions">
                                           <div class="panel-body">
                                         <table id="tableListeQuestions" class="table table-bordered  table-striped">
 
@@ -69,21 +69,32 @@
                                       <!--Fin  Questions tabs -->
                                       
 
-                                      <div class="panel panel-default padd-t-sm tab-pane tabs-up" id="reponses">
+                                      <div class="panel panel-default padd-t-sm tab-pane tabs-up" id="tabReponses">
                                       
                                           <div class="panel-heading clean clearfix text-center">
                                         
                                           </div>
                   
                                           <div class="panel-body">
-                                             
+
+                                              <table id="tableListeReponses" class="table table-bordered  table-striped">
+                                                 <thead>
+                                                    <tr>
+                                                        <th>id</th>
+                                                        <th>reponses reçu</th>
+                                                        <th>Nom</th>
+                                                        <th>Prenom</th>
+                                                        <th>Date Ajout</th>
+                                                    </tr>
+                                                </thead>
+                                              </table>
                                           </div>
                                       
                                     </div>
                                       <!--Fin tabs reponses -->
                                       
                                       
-                                      <div class="panel panel-default tab-pane tabs-up" id="categories">
+                                      <div class="panel panel-default tab-pane tabs-up" id="tabCategories">
                                           <div class="panel-body">
                                           </div>
                                           
@@ -130,55 +141,10 @@
            //  });
 
 
-            /*--APPEL AJAX pour remplir la table des questions---------*/
-           $.ajax({
-              type: "GET",
-              url:'QuestionnaireController/sendQuestionsToTable',
-              dataType: 'json',
-              success: function(quest) {
-
-                var quest = jQuery.parseJSON(JSON.stringify(quest));
-                //console.log(quest);
-
-               $.each(quest, function(key, value){
-                var i=1;
-                var questVal=quest[key];
-
-                var $TableRow = $('<tr></tr>');
-                var $TableDataColID='<td>'+questVal.id_question+'</td>';
-                var $TableDataColQuestion='<td>'+questVal.libelle+'</td>';
-                var $TableDataColActif='<td><div class="switch-button lg showcase-switch-button"><input id="switch-button-actifs'+questVal.id_question+'" '+isCheckBoxChecked(questVal.statusGenerale)+' type="checkbox"><label for="switch-button-actifs'+questVal.id_question+'"></label></div></td>';
-                var $TableDataColStats='<td><div class="switch-button lg primary showcase-switch-button"><input id="switch-button-stats'+questVal.id_question+'" '+isCheckBoxChecked(questVal.statusStatistiques)+' type="checkbox"><label for="switch-button-stats'+questVal.id_question+'"></label></div></td>';
-                var $TableDataColPart='<td><div class="switch-button lg info showcase-switch-button"><input id="switch-button-particulier'+questVal.id_question+'" '+isCheckBoxChecked(questVal.statusParticulier)+' type="checkbox"><label for="switch-button-particulier'+questVal.id_question+'"></label></div></td>';
-                var $TableDataColPro='<td><div class="switch-button lg warning showcase-switch-button"><input id="switch-button-pro'+questVal.id_question+'" '+isCheckBoxChecked(questVal.statusProfessionnel)+' type="checkbox"><label for="switch-button-pro'+questVal.id_question+'"></label></div></td>';
-                var $TableDataColMotsCles='<td>'+questVal.motscles+'</td>';
-                var $TableDataColDateAjout='<td>'+questVal.dateAjout+'</td>';
-
-                var $AllTD=$TableRow.append($TableDataColID).append($TableDataColQuestion).append($TableDataColActif).append($TableDataColStats).append($TableDataColPart).append($TableDataColPro).append($TableDataColMotsCles).append($TableDataColDateAjout);
-
-                $("#tbodyQuestionsTables").append($AllTD);
-
-                   /* $("#tbodyQuestionsTables").append('<tr><td>'+questVal.id_question+'</td><td>'+questVal.libelle+'</td><td><div class="switch-button lg showcase-switch-button"><input id="switch-button-actifs'+questVal.id_question+'" '+checkboxCheckActif+' type="checkbox"><label for="switch-button-actifs'+questVal.id_question+'"></label></div></td><td><div class="switch-button lg primary showcase-switch-button"><input id="switch-button-stats'+questVal.id_question+'" '+isCheckBoxChecked(questVal.statusStatistiques)+' type="checkbox"><label for="switch-button-stats'+questVal.id_question+'"></label></div></td><td><div class="switch-button lg info showcase-switch-button"><input id="switch-button-particulier'+questVal.id_question+'" '+isCheckBoxChecked(questVal.statusParticulier)+' type="checkbox"><label for="switch-button-particulier'+questVal.id_question+'"></label></div></td><td><div class="switch-button lg warning showcase-switch-button"><input id="switch-button-pro'+questVal.id_question+'" '+isCheckBoxChecked(questVal.statusProfessionnel)+' type="checkbox"><label for="switch-button-pro'+questVal.id_question+'"></label></div></td><td>'+questVal.motscles+'</td><td>'+questVal.dateAjout+'</td></tr>');*/
-
-                  i++;
-              });
-               $('#tableListeQuestions').dataTable();
-              },
-              error: function() {
-                  alert('Erreur de récupération des données!');
-              }
-
-            });
-           
-
-
           // $("#tbodyQuestionsTables").
            
            /*----POUR LEBOUTON AJOUT DE QUESTION----*/
-           $("#btnAddQuestion").on('click',function(){
-              openModal();
-           });
-
+           
 
            /*------FONCTIONS POUR LES MODIFICATIONS DES CHECKBOXS---*/
 
@@ -186,52 +152,10 @@
                 alert('test');
             });*/
 
-           $(document).on('change','input[type=checkbox]',function() {
-             var id=this.id;
-
-            if (this.checked) {
-                updateDataIfCheckBoxCheked(id);
-              return;
-
-             }
-                updateDataIfCheckBoxUnchecked(id);
-          });
 
 
-          function updateDataIfCheckBoxCheked(id){
-             alert('Activé:Appel à AJAX pour '+id);
-             /*
-             var url="questionnaire/updateQuestionnaire";
-             $.ajax({
-              type: "POST",
-              url:url,
-              dataType: 'json',
-              //data: {name: user_name, pwd: password},
-              data:data,
-              success: function(res) {
-                  result = JSON.parse(data);
-                  notie.alert(1, 'Questionnaire envoyé avec succès!',2);
-                  console.log(result);
-              }*/
-          }
 
 
-          function isCheckBoxChecked(status){
-              var valRetourne='';
-               if(status==1){
-                      valRetourne = 'checked';
-                }
-              return valRetourne;        
-          }
-
-
-          function updateDataIfCheckBoxUnchecked(id){
-             alert('desactivé:Appel à AJAX pour'+id);
-          }
-
-          function openModal(){
-            $('#modalCreateQuestion').modal();
-          }
         });
 
          
