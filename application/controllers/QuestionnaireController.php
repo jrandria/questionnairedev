@@ -169,26 +169,31 @@ class QuestionnaireController extends CI_Controller {
 
 	}
 
-	function insertNewQuestion($question){
 
 
+	function updateIfQuestionChange(){
+
+		$passedArray=array(
+			'statusGenerale' => $this->input->post('statusGenerale'),
+			'statusStatistiques' => $this->input->post('statusStatistiques'),
+			'statusParticulier' => $this->input->post('statusParticulier'),
+			'statusProfessionnel' => $this->input->post('statusProfessionnel')
+			);
+
+		$emptyRemovedData = array_filter($passedArray,
+			function($var){//Callback qui enlène les valeurs null de monArray
+    			return !is_null($var);
+		});
+
+		/*$data = array(
+			'statusGenerale' => ($this->input->post('statusGenerale'))
+		);*/
+		$dataRet=$this->questionModel->updateQuestion($this->input->post('keywordid'),$emptyRemovedData);
+
+		echo ($dataRet);//Retour à Ajax
 	}
 
 
-	function updateIfQuestionChange($question){
-		/*
-    class Myclass {
-        var $title = 'My Title';
-        var $content = 'My Content';
-        var $date = 'My Date';
-    }
-*/
-
-		$object = new Myclass;
-
-		$this->db->where('id', $id);
-		$this->db->update('mytable', $object); 
-	}
 
 	function sendResponsesToTable(){
 

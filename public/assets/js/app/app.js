@@ -26,16 +26,6 @@ $(function() {
     chargementDeTableQuestions();
 
     /*----CHARGEMENT DES EVENTS------------*/
-     $(document).on('change','input[type=checkbox]',function() {
-        var id=this.id;
-
-        if (this.checked) {
-         updateDataIfCheckBoxCheked(id);
-            return;
-
-        }
-         updateDataIfCheckBoxUnchecked(id);
-    });
 
     $('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
         var target = $(e.target).attr("href") // activated tab
@@ -105,6 +95,8 @@ $(function() {
                 var i=1;
                 var questVal=quest[key];
 
+                //A modifier en $.each( $( "div" ), function() {}); en jquery c'est plus joli
+
                 var $TableRow = $('<tr></tr>');
                 var $TableDataColID='<td>'+questVal.id_question+'</td>';
                 var $TableDataColQuestion='<td>'+questVal.libelle+'</td>';
@@ -127,7 +119,6 @@ $(function() {
 
                table.on( 'xhr', function () {
                   var json = table.ajax.json();
-                  alert( json.data.length +' row(s) were loaded' );
               } );
                /*setInterval( function () {
                   table.ajax.reload();
@@ -210,38 +201,14 @@ $(function() {
                 break;
             case 'switch-button-proPop':
                 status.statusProfessionnelValue = isChecked;
-                console.log(status.statusProfessionnelValue );
                 break;
             case 'switch-button-particulierPop':
                 status.statusParticulierValue = isChecked;
-                console.log(status.statusParticulierValue );
                 break;
             default:
                 return 0;
         }
     }
-
-    function openModal() {
-        $('#modalCreateQuestion').modal();
-    }
-
-    function updateDataIfCheckBoxCheked(id){
-        alert('Activé:Appel à AJAX pour '+id);
-             /*
-             var url="questionnaire/updateQuestionnaire";
-             $.ajax({
-              type: "POST",
-              url:url,
-              dataType: 'json',
-              //data: {name: user_name, pwd: password},
-              data:data,
-              success: function(res) {
-                  result = JSON.parse(data);
-                  notie.alert(1, 'Questionnaire envoyé avec succès!',2);
-                  console.log(result);
-              }*/
-    }
-
 
     function isCheckBoxChecked(status){
         var valRetourne='';
@@ -251,9 +218,93 @@ $(function() {
         return valRetourne;        
     }
 
+    $(document).on('change','input[type=checkbox]',function() {
 
-    function updateDataIfCheckBoxUnchecked(id){
-             alert('desactivé:Appel à AJAX pour'+id);
+        var idButton=this.id;
+        var valIDElement= $(this).closest('td').siblings(':first-child').text();
+        var boolChecked= this.checked;
+
+        updateDataIfCheckBoxCheked(idButton,valIDElement,boolChecked);
+    });    
+
+    function updateDataIfCheckBoxCheked(idButton,valIDElement,isChecked){
+      var dataToSend={
+        token: $("input[name='token']").val(),
+        keywordid:parseInt(valIDElement)
+      };
+
+        console.log('Id du Bouton:'+idButton+'-- ID dans la base:'+valIDElement);
+        console.info('checkBoxChecked');
+        
+        switch(idButton){
+          case 'switch-button-actifs'+valIDElement:
+            dataToSend['statusGenerale'] = isChecked?1:0;
+            updateElementOnCheckBoxChange(dataToSend);
+            break;
+          case 'switch-button-stats'+valIDElement:
+            dataToSend['statusStatistiques'] = isChecked?1:0;
+            updateElementOnCheckBoxChange(dataToSend);
+            break;
+          case 'switch-button-particulier'+valIDElement:
+            dataToSend['statusParticulier'] = isChecked?1:0;
+            updateElementOnCheckBoxChange(dataToSend);
+            break;
+          case 'switch-button-pro'+valIDElement:
+            dataToSend['statusProfessionnel'] = isChecked?1:0;
+            updateElementOnCheckBoxChange(dataToSend);
+            break;
+          case 'remember':
+            break;
+           default:
+             ;
+        }
+        
+    }
+
+
+
+
+    function updateDataIfCheckBoxUnchecked(idButton,valIDElement){
+
+       console.log('Id du Bouton:'+idButton+'-- ID dans la base:'+valIDElement);
+    }
+
+    function updateElementOnCheckBoxChange(data){
+
+      console.log("Dans la fonction update:"+JSON.stringify(data, null, "  "));
+       var url="QuestionnaireController/updateIfQuestionChange";
+             $.ajax({
+              type: "POST",
+              url:url,
+              dataType: 'json',
+              data:data,
+              success: function(res) {
+                  notie.alert(2, 'Update avec succès!',2);
+                  console.log((res));
+              },
+               error: function(jqXHR, exception) {
+                  alert('Erreur de récupération des données!'+ jqXHR.responseText);
+                  /*
+                      var msg = '';
+                      if (jqXHR.status === 0) {
+                          msg = 'Not connect.\n Verify Network.';
+                      } else if (jqXHR.status == 404) {
+                          msg = 'Requested page not found. [404]';
+                      } else if (jqXHR.status == 500) {
+                          msg = 'Internal Server Error [500].';
+                      } else if (exception === 'parsererror') {
+                          msg = 'Requested JSON parse failed.';
+                      } else if (exception === 'timeout') {
+                          msg = 'Time out error.';
+                      } else if (exception === 'abort') {
+                          msg = 'Ajax request aborted.';
+                      } else {
+                          msg = 'Uncaught Error.\n' + jqXHR.responseText;
+                      }
+                      console.log(msg);
+                  */
+              }
+             });
     }
 
     function openModal(){

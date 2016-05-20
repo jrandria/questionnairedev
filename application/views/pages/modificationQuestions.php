@@ -88,6 +88,7 @@
                                                     </tr>
                                                 </thead>
                                               </table>
+                                              <?php echo form_open("sendQuestionsToDB");?><?php echo form_close()?><!-- Pour génerer un token-->
                                           </div>
                                       
                                     </div>

@@ -93,10 +93,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         {
             $boolVal=TRUE;
             if(!$this->db->insert('question',$data)){
-                return $boolVal=FALSE;
+                $boolVal=FALSE;
             }
             return $boolVal;
 
+        }
+
+        public function updateQuestion($id,$data)
+        {
+            $boolVal=TRUE;
+            $this->db->where('id_question', $id);
+            $query=$this->db->update('question',$data);
+            
+
+            if(!$query) {
+                $boolVal=FALSE;
+            } 
+            return $boolVal;
         }
 
 
