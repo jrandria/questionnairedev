@@ -68,5 +68,6 @@ $route['utilisateur']='QuestionnaireController/load_modif_utilisateur';
 $route['getDataCategorieFromDB']='QuestionnaireController/getDataCategorieFromDB';
 $route['getQuestionsFromDB']='QuestionnaireController/sendQuestionsToTable';
 $route['sendQuestionsToDB']='QuestionnaireController/sendQuestionsToDB';
+$route['getReponsesFromDB']='QuestionnaireController/sendResponsesToTable';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

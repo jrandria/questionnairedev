@@ -198,7 +198,11 @@ class QuestionnaireController extends CI_Controller {
 	function sendResponsesToTable(){
 
 		$data=$this->reponsesModel->selectAllResponses();
-
+		$output = array();
+		foreach($data as $k => $value) {
+		    $output[] = array_values($value);
+		}
+		//echo json_encode(array('data' => $output));
 		echo json_encode($data);
 		
 

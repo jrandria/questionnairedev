@@ -32,28 +32,29 @@
                                   
                                       <div class="panel panel-default tab-pane tabs-up active" id="tabQuestions">
                                           <div class="panel-body">
-                                        <table id="tableListeQuestions" class="table table-bordered  table-striped">
+                                            <table id="tableListeQuestions" class="table table-bordered  table-striped">
 
-                                                <thead>
-                                                      <tr>
-                                                        <th>#</th>
-                                                        <th>Questions</th>
-                                                        <th>Actif</th>
-                                                        <th>Statistiques</th>
-                                                        <th>Particulier</th>
-                                                        <th>Professionnel</th>
-                                                        <th>Mots-clés</th>
-                                                        <th>Date ajout</th>
-                                                      </tr>
-                                                </thead>
-                                                 <colgroup>
-                                                    <col>
-                                                    <col class="col-md-4">
-                                                </colgroup>
-                                                <tbody id="tbodyQuestionsTables">
-                                                </tbody>
-                                       </table>
-                                          
+                                                    <thead>
+                                                          <tr>
+                                                            <th>#</th>
+                                                            <th>Questions</th>
+                                                            <th>Actif</th>
+                                                            <th>Statistiques</th>
+                                                            <th>Particulier</th>
+                                                            <th>Professionnel</th>
+                                                            <th>Mots-clés</th>
+                                                            <th>Date ajout</th>
+                                                          </tr>
+                                                    </thead>
+                                                     <colgroup>
+                                                        <col>
+                                                        <col class="col-md-4">
+                                                    </colgroup>
+                                                    <tbody id="tbodyQuestionsTables">
+                                                    </tbody>
+                                           </table>
+
+                                          <?php echo form_open("sendQuestionsToDB");?><?php echo form_close()?><!-- Pour génerer un token-->
                                           </div>
                                           <div class="panel-footer">
                                             <form role="form">
@@ -79,16 +80,33 @@
 
                                               <table id="tableListeReponses" class="table table-bordered  table-striped">
                                                  <thead>
+                                                    <TR>
+                                                      <TH colspan="6" scope="colgroup" class="text-center">Liste des réponses reçus</TH>
+                                                    </TR>
                                                     <tr>
+                                                      <th scope="col" >id</th>
+                                                      <th scope="col" align="right">idquestions</th>
+                                                      <th scope="col" >reponses_recu</th>
+                                                      <th scope="col" >idClient</th>
+                                                      <th scope="col" >satisfaction</th>
+                                                      <th scope="col" >dateAjout</th>
+                                                    <!--
                                                         <th>id</th>
                                                         <th>reponses reçu</th>
                                                         <th>Nom</th>
                                                         <th>Prenom</th>
                                                         <th>Date Ajout</th>
+                                                        -->
                                                     </tr>
                                                 </thead>
+                                                   <colgroup>
+                                                        <col>
+                                                        <col class="col-md-4">
+                                                    </colgroup>
+                                                    <tbody id="tbodyReponsesTables">
+                                                    </tbody>
                                               </table>
-                                              <?php echo form_open("sendQuestionsToDB");?><?php echo form_close()?><!-- Pour génerer un token-->
+                                              
                                           </div>
                                       
                                     </div>

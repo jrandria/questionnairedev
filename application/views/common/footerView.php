@@ -51,6 +51,9 @@
     <!-- FullCalendar js -->
     <script type="text/javascript" src="<?php echo base_url('public/assets/js/plugins/fullcalendar/fullcalendar.min.js'); ?>"></script>
 
+        <!-- Unserializejs -->
+    <script type="text/javascript" src="<?php echo base_url('public/assets/js/unserialize/phpUnserialize.js'); ?>"></script>
+
     <!-- Data Table -->
     <script type="text/javascript" src="<?php echo base_url('public/assets/js/plugins/datatables/jquery.dataTables.js'); ?>"></script>
     <script type="text/javascript" src="<?php echo base_url('public/assets/js/plugins/datatables/DT_bootstrap.js'); ?>"></script>
