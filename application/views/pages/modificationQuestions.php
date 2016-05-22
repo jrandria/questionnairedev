@@ -80,16 +80,27 @@
 
                                               <table id="tableListeReponses" class="table table-bordered  table-striped">
                                                  <thead>
-                                                    <TR>
-                                                      <TH colspan="6" scope="colgroup" class="text-center">Liste des réponses reçus</TH>
-                                                    </TR>
                                                     <tr>
-                                                      <th scope="col" >id</th>
-                                                      <th scope="col" align="right">idquestions</th>
+                                                      <TH colspan="8" scope="colgroup" class="text-center">Liste des réponses reçus</TH>
+                                                    </tr>
+                                                    <tr>
+                                                        <th rowspan="2">id</th>
+                                                        <th colspan="2"  class="text-center">Questions/Réponses</th>
+                                                        <th colspan="5"  class="text-center"></th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Questions</th>
+                                                        <th>Réponses</th>
+                                                        <th scope="col" >idClient</th>
+                                                        <th scope="col" colspan="3"   class="text-center">Satisfaction</th>
+                                                        <th scope="col" >dateAjout</th>
+                                                    </tr>
+                                                    <tr>
+                                                      <!--<th scope="col" align="right">idquestions</th>
                                                       <th scope="col" >reponses_recu</th>
                                                       <th scope="col" >idClient</th>
-                                                      <th scope="col" >satisfaction</th>
-                                                      <th scope="col" >dateAjout</th>
+                                                      <th scope="col" >satisfaction</th>-->
+                                                      
                                                     <!--
                                                         <th>id</th>
                                                         <th>reponses reçu</th>
@@ -115,6 +126,30 @@
                                       
                                       <div class="panel panel-default tab-pane tabs-up" id="tabCategories">
                                           <div class="panel-body">
+                                            <table border="1" class="table table-bordered  table-striped">
+                                              <caption><EM>A test table with merged cells</EM></caption>
+                                              <tr>
+                                                  <th rowspan="2"></th>
+                                                  <th colspan="2"  class="text-center">Average</th>
+                                                  <th rowspan="2"  class="text-center">Red<BR>eyes</BR></th>
+                                              </tr>
+                                              <tr>
+                                                  <th>height</th>
+                                                  <th>weight</th>
+                                              </tr>
+                                              <tr>
+                                                  <th>Males</th>
+                                                      <td>1.9</td>
+                                                      <td>0.003</td>
+                                                      <td>40%</td>
+                                              </tr>
+                                              <tr>
+                                                  <th>Females</th>
+                                                  <td>1.7</td>
+                                                  <td>0.002</td>
+                                                  <td>43%</td>
+                                              </tr>
+                                              </table>
                                           </div>
                                           
                                       </div>

@@ -3359,3 +3359,1372 @@ FROM `question`
 JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
 ===[took:0.034]
 
+SELECT GET_LOCK('bcfe8bb5d7d47cbe3db9c3cce93430c2e50b50a9', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = 'bcfe8bb5d7d47cbe3db9c3cce93430c2e50b50a9'
+SELECT COUNT(*) AS `numrows`
+FROM `users`
+WHERE `email` = 'admin@admin.com'
+SELECT `email`, `id`, `email`, `last_login`
+FROM `users`
+WHERE `email` = 'admin@admin.com'
+AND `remember_code` = 'vqB.pPetEoq4ERr82xGGgO'
+ORDER BY `id` DESC
+ LIMIT 1
+UPDATE `users` SET `last_login` = 1463860099
+WHERE `id` = '1'
+SELECT `users`.*, `users`.`id` as `id`, `users`.`id` as `user_id`
+FROM `users`
+WHERE `users`.`id` = '1'
+ORDER BY `users`.`id` DESC
+ LIMIT 1
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.002]
+
+SELECT GET_LOCK('bcfe8bb5d7d47cbe3db9c3cce93430c2e50b50a9', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = 'bcfe8bb5d7d47cbe3db9c3cce93430c2e50b50a9'
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.002]
+
+SELECT GET_LOCK('bcfe8bb5d7d47cbe3db9c3cce93430c2e50b50a9', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = 'bcfe8bb5d7d47cbe3db9c3cce93430c2e50b50a9'
+SELECT *
+FROM `reponses`
+===[took:0.002]
+
+SELECT GET_LOCK('bcfe8bb5d7d47cbe3db9c3cce93430c2e50b50a9', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = 'bcfe8bb5d7d47cbe3db9c3cce93430c2e50b50a9'
+SELECT `users`.*, `users`.`id` as `id`, `users`.`id` as `user_id`
+FROM `users`
+WHERE `users`.`id` = '1'
+ORDER BY `users`.`id` DESC
+ LIMIT 1
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.032]
+
+SELECT GET_LOCK('bcfe8bb5d7d47cbe3db9c3cce93430c2e50b50a9', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = 'bcfe8bb5d7d47cbe3db9c3cce93430c2e50b50a9'
+SELECT *
+FROM `reponses`
+===[took:0.007]
+
+SELECT GET_LOCK('bcfe8bb5d7d47cbe3db9c3cce93430c2e50b50a9', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = 'bcfe8bb5d7d47cbe3db9c3cce93430c2e50b50a9'
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.008]
+
+SELECT GET_LOCK('bcfe8bb5d7d47cbe3db9c3cce93430c2e50b50a9', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = 'bcfe8bb5d7d47cbe3db9c3cce93430c2e50b50a9'
+UPDATE `ci_sessions` SET `timestamp` = 1463865889, `data` = '__ci_last_regenerate|i:1463865889;identity|s:15:\"admin@admin.com\";email|s:15:\"admin@admin.com\";user_id|s:1:\"1\";old_last_login|s:10:\"1463830604\";'
+WHERE `id` = 'bcfe8bb5d7d47cbe3db9c3cce93430c2e50b50a9'
+SELECT RELEASE_LOCK('bcfe8bb5d7d47cbe3db9c3cce93430c2e50b50a9') AS ci_session_lock
+SELECT GET_LOCK('17251ee4d41d2f4c47bff0428fa171448b9595eb', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '17251ee4d41d2f4c47bff0428fa171448b9595eb'
+SELECT `users`.*, `users`.`id` as `id`, `users`.`id` as `user_id`
+FROM `users`
+WHERE `users`.`id` = '1'
+ORDER BY `users`.`id` DESC
+ LIMIT 1
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.002]
+
+SELECT GET_LOCK('17251ee4d41d2f4c47bff0428fa171448b9595eb', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '17251ee4d41d2f4c47bff0428fa171448b9595eb'
+SELECT *
+FROM `reponses`
+===[took:0.037]
+
+SELECT GET_LOCK('17251ee4d41d2f4c47bff0428fa171448b9595eb', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '17251ee4d41d2f4c47bff0428fa171448b9595eb'
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.002]
+
+SELECT GET_LOCK('17251ee4d41d2f4c47bff0428fa171448b9595eb', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '17251ee4d41d2f4c47bff0428fa171448b9595eb'
+SELECT `users`.*, `users`.`id` as `id`, `users`.`id` as `user_id`
+FROM `users`
+WHERE `users`.`id` = '1'
+ORDER BY `users`.`id` DESC
+ LIMIT 1
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.002]
+
+SELECT GET_LOCK('17251ee4d41d2f4c47bff0428fa171448b9595eb', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '17251ee4d41d2f4c47bff0428fa171448b9595eb'
+SELECT *
+FROM `reponses`
+===[took:0.001]
+
+SELECT GET_LOCK('17251ee4d41d2f4c47bff0428fa171448b9595eb', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '17251ee4d41d2f4c47bff0428fa171448b9595eb'
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.001]
+
+SELECT GET_LOCK('17251ee4d41d2f4c47bff0428fa171448b9595eb', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '17251ee4d41d2f4c47bff0428fa171448b9595eb'
+SELECT `users`.*, `users`.`id` as `id`, `users`.`id` as `user_id`
+FROM `users`
+WHERE `users`.`id` = '1'
+ORDER BY `users`.`id` DESC
+ LIMIT 1
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.055]
+
+SELECT GET_LOCK('17251ee4d41d2f4c47bff0428fa171448b9595eb', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '17251ee4d41d2f4c47bff0428fa171448b9595eb'
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.002]
+
+SELECT GET_LOCK('17251ee4d41d2f4c47bff0428fa171448b9595eb', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '17251ee4d41d2f4c47bff0428fa171448b9595eb'
+SELECT *
+FROM `reponses`
+===[took:0.001]
+
+SELECT GET_LOCK('17251ee4d41d2f4c47bff0428fa171448b9595eb', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '17251ee4d41d2f4c47bff0428fa171448b9595eb'
+UPDATE `ci_sessions` SET `timestamp` = 1463866233, `data` = '__ci_last_regenerate|i:1463866233;identity|s:15:\"admin@admin.com\";email|s:15:\"admin@admin.com\";user_id|s:1:\"1\";old_last_login|s:10:\"1463830604\";'
+WHERE `id` = '17251ee4d41d2f4c47bff0428fa171448b9595eb'
+SELECT RELEASE_LOCK('17251ee4d41d2f4c47bff0428fa171448b9595eb') AS ci_session_lock
+SELECT GET_LOCK('c8234d4af12307f08994566b53e82f45c5ce602b', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = 'c8234d4af12307f08994566b53e82f45c5ce602b'
+SELECT `users`.*, `users`.`id` as `id`, `users`.`id` as `user_id`
+FROM `users`
+WHERE `users`.`id` = '1'
+ORDER BY `users`.`id` DESC
+ LIMIT 1
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.002]
+
+SELECT GET_LOCK('c8234d4af12307f08994566b53e82f45c5ce602b', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = 'c8234d4af12307f08994566b53e82f45c5ce602b'
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.018]
+
+SELECT GET_LOCK('c8234d4af12307f08994566b53e82f45c5ce602b', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = 'c8234d4af12307f08994566b53e82f45c5ce602b'
+SELECT *
+FROM `reponses`
+===[took:0.001]
+
+SELECT GET_LOCK('c8234d4af12307f08994566b53e82f45c5ce602b', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = 'c8234d4af12307f08994566b53e82f45c5ce602b'
+SELECT `users`.*, `users`.`id` as `id`, `users`.`id` as `user_id`
+FROM `users`
+WHERE `users`.`id` = '1'
+ORDER BY `users`.`id` DESC
+ LIMIT 1
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.001]
+
+SELECT GET_LOCK('c8234d4af12307f08994566b53e82f45c5ce602b', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = 'c8234d4af12307f08994566b53e82f45c5ce602b'
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.002]
+
+SELECT GET_LOCK('c8234d4af12307f08994566b53e82f45c5ce602b', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = 'c8234d4af12307f08994566b53e82f45c5ce602b'
+SELECT *
+FROM `reponses`
+===[took:0.001]
+
+SELECT GET_LOCK('c8234d4af12307f08994566b53e82f45c5ce602b', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = 'c8234d4af12307f08994566b53e82f45c5ce602b'
+UPDATE `ci_sessions` SET `timestamp` = 1463866609, `data` = '__ci_last_regenerate|i:1463866609;identity|s:15:\"admin@admin.com\";email|s:15:\"admin@admin.com\";user_id|s:1:\"1\";old_last_login|s:10:\"1463830604\";'
+WHERE `id` = 'c8234d4af12307f08994566b53e82f45c5ce602b'
+SELECT RELEASE_LOCK('c8234d4af12307f08994566b53e82f45c5ce602b') AS ci_session_lock
+SELECT GET_LOCK('12d44b4bdd80d9c978feba87ffeb9879af19f891', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '12d44b4bdd80d9c978feba87ffeb9879af19f891'
+SELECT `users`.*, `users`.`id` as `id`, `users`.`id` as `user_id`
+FROM `users`
+WHERE `users`.`id` = '1'
+ORDER BY `users`.`id` DESC
+ LIMIT 1
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.001]
+
+SELECT GET_LOCK('12d44b4bdd80d9c978feba87ffeb9879af19f891', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '12d44b4bdd80d9c978feba87ffeb9879af19f891'
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.002]
+
+SELECT GET_LOCK('12d44b4bdd80d9c978feba87ffeb9879af19f891', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '12d44b4bdd80d9c978feba87ffeb9879af19f891'
+SELECT *
+FROM `reponses`
+===[took:0.001]
+
+SELECT GET_LOCK('12d44b4bdd80d9c978feba87ffeb9879af19f891', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '12d44b4bdd80d9c978feba87ffeb9879af19f891'
+SELECT `users`.*, `users`.`id` as `id`, `users`.`id` as `user_id`
+FROM `users`
+WHERE `users`.`id` = '1'
+ORDER BY `users`.`id` DESC
+ LIMIT 1
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.001]
+
+SELECT GET_LOCK('12d44b4bdd80d9c978feba87ffeb9879af19f891', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '12d44b4bdd80d9c978feba87ffeb9879af19f891'
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.003]
+
+SELECT GET_LOCK('12d44b4bdd80d9c978feba87ffeb9879af19f891', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '12d44b4bdd80d9c978feba87ffeb9879af19f891'
+SELECT *
+FROM `reponses`
+===[took:0.003]
+
+SELECT GET_LOCK('12d44b4bdd80d9c978feba87ffeb9879af19f891', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '12d44b4bdd80d9c978feba87ffeb9879af19f891'
+SELECT `users`.*, `users`.`id` as `id`, `users`.`id` as `user_id`
+FROM `users`
+WHERE `users`.`id` = '1'
+ORDER BY `users`.`id` DESC
+ LIMIT 1
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.001]
+
+SELECT GET_LOCK('12d44b4bdd80d9c978feba87ffeb9879af19f891', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '12d44b4bdd80d9c978feba87ffeb9879af19f891'
+SELECT *
+FROM `reponses`
+===[took:0.027]
+
+SELECT GET_LOCK('12d44b4bdd80d9c978feba87ffeb9879af19f891', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '12d44b4bdd80d9c978feba87ffeb9879af19f891'
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.002]
+
+SELECT GET_LOCK('12d44b4bdd80d9c978feba87ffeb9879af19f891', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '12d44b4bdd80d9c978feba87ffeb9879af19f891'
+SELECT `users`.*, `users`.`id` as `id`, `users`.`id` as `user_id`
+FROM `users`
+WHERE `users`.`id` = '1'
+ORDER BY `users`.`id` DESC
+ LIMIT 1
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.001]
+
+SELECT GET_LOCK('12d44b4bdd80d9c978feba87ffeb9879af19f891', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '12d44b4bdd80d9c978feba87ffeb9879af19f891'
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.023]
+
+SELECT GET_LOCK('12d44b4bdd80d9c978feba87ffeb9879af19f891', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '12d44b4bdd80d9c978feba87ffeb9879af19f891'
+SELECT *
+FROM `reponses`
+===[took:0.005]
+
+SELECT GET_LOCK('12d44b4bdd80d9c978feba87ffeb9879af19f891', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '12d44b4bdd80d9c978feba87ffeb9879af19f891'
+UPDATE `ci_sessions` SET `timestamp` = 1463866926, `data` = '__ci_last_regenerate|i:1463866926;identity|s:15:\"admin@admin.com\";email|s:15:\"admin@admin.com\";user_id|s:1:\"1\";old_last_login|s:10:\"1463830604\";'
+WHERE `id` = '12d44b4bdd80d9c978feba87ffeb9879af19f891'
+SELECT RELEASE_LOCK('12d44b4bdd80d9c978feba87ffeb9879af19f891') AS ci_session_lock
+SELECT GET_LOCK('85f23ecc5dc5af687acbd94533a7c4bd00a48e2b', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '85f23ecc5dc5af687acbd94533a7c4bd00a48e2b'
+SELECT `users`.*, `users`.`id` as `id`, `users`.`id` as `user_id`
+FROM `users`
+WHERE `users`.`id` = '1'
+ORDER BY `users`.`id` DESC
+ LIMIT 1
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.001]
+
+SELECT GET_LOCK('85f23ecc5dc5af687acbd94533a7c4bd00a48e2b', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '85f23ecc5dc5af687acbd94533a7c4bd00a48e2b'
+SELECT *
+FROM `reponses`
+===[took:0.001]
+
+SELECT GET_LOCK('85f23ecc5dc5af687acbd94533a7c4bd00a48e2b', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '85f23ecc5dc5af687acbd94533a7c4bd00a48e2b'
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.018]
+
+SELECT GET_LOCK('85f23ecc5dc5af687acbd94533a7c4bd00a48e2b', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '85f23ecc5dc5af687acbd94533a7c4bd00a48e2b'
+SELECT `users`.*, `users`.`id` as `id`, `users`.`id` as `user_id`
+FROM `users`
+WHERE `users`.`id` = '1'
+ORDER BY `users`.`id` DESC
+ LIMIT 1
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.001]
+
+SELECT GET_LOCK('85f23ecc5dc5af687acbd94533a7c4bd00a48e2b', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '85f23ecc5dc5af687acbd94533a7c4bd00a48e2b'
+SELECT *
+FROM `reponses`
+===[took:0.013]
+
+SELECT GET_LOCK('85f23ecc5dc5af687acbd94533a7c4bd00a48e2b', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '85f23ecc5dc5af687acbd94533a7c4bd00a48e2b'
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.002]
+
+SELECT GET_LOCK('85f23ecc5dc5af687acbd94533a7c4bd00a48e2b', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '85f23ecc5dc5af687acbd94533a7c4bd00a48e2b'
+SELECT `users`.*, `users`.`id` as `id`, `users`.`id` as `user_id`
+FROM `users`
+WHERE `users`.`id` = '1'
+ORDER BY `users`.`id` DESC
+ LIMIT 1
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.001]
+
+SELECT GET_LOCK('85f23ecc5dc5af687acbd94533a7c4bd00a48e2b', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '85f23ecc5dc5af687acbd94533a7c4bd00a48e2b'
+SELECT *
+FROM `reponses`
+===[took:0.001]
+
+SELECT GET_LOCK('85f23ecc5dc5af687acbd94533a7c4bd00a48e2b', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '85f23ecc5dc5af687acbd94533a7c4bd00a48e2b'
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.011]
+
+SELECT GET_LOCK('85f23ecc5dc5af687acbd94533a7c4bd00a48e2b', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '85f23ecc5dc5af687acbd94533a7c4bd00a48e2b'
+UPDATE `ci_sessions` SET `timestamp` = 1463867283, `data` = '__ci_last_regenerate|i:1463867283;identity|s:15:\"admin@admin.com\";email|s:15:\"admin@admin.com\";user_id|s:1:\"1\";old_last_login|s:10:\"1463830604\";'
+WHERE `id` = '85f23ecc5dc5af687acbd94533a7c4bd00a48e2b'
+SELECT RELEASE_LOCK('85f23ecc5dc5af687acbd94533a7c4bd00a48e2b') AS ci_session_lock
+SELECT GET_LOCK('ac6b189fbfba4f45f27d5098d781ed8bb69ba914', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = 'ac6b189fbfba4f45f27d5098d781ed8bb69ba914'
+SELECT `users`.*, `users`.`id` as `id`, `users`.`id` as `user_id`
+FROM `users`
+WHERE `users`.`id` = '1'
+ORDER BY `users`.`id` DESC
+ LIMIT 1
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.002]
+
+SELECT GET_LOCK('ac6b189fbfba4f45f27d5098d781ed8bb69ba914', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = 'ac6b189fbfba4f45f27d5098d781ed8bb69ba914'
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.001]
+
+SELECT GET_LOCK('ac6b189fbfba4f45f27d5098d781ed8bb69ba914', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = 'ac6b189fbfba4f45f27d5098d781ed8bb69ba914'
+SELECT *
+FROM `reponses`
+===[took:0.001]
+
+SELECT GET_LOCK('ac6b189fbfba4f45f27d5098d781ed8bb69ba914', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = 'ac6b189fbfba4f45f27d5098d781ed8bb69ba914'
+SELECT `users`.*, `users`.`id` as `id`, `users`.`id` as `user_id`
+FROM `users`
+WHERE `users`.`id` = '1'
+ORDER BY `users`.`id` DESC
+ LIMIT 1
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.002]
+
+SELECT GET_LOCK('ac6b189fbfba4f45f27d5098d781ed8bb69ba914', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = 'ac6b189fbfba4f45f27d5098d781ed8bb69ba914'
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.001]
+
+SELECT GET_LOCK('ac6b189fbfba4f45f27d5098d781ed8bb69ba914', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = 'ac6b189fbfba4f45f27d5098d781ed8bb69ba914'
+SELECT *
+FROM `reponses`
+===[took:0.028]
+
+SELECT GET_LOCK('ac6b189fbfba4f45f27d5098d781ed8bb69ba914', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = 'ac6b189fbfba4f45f27d5098d781ed8bb69ba914'
+UPDATE `ci_sessions` SET `timestamp` = 1463867855, `data` = '__ci_last_regenerate|i:1463867855;identity|s:15:\"admin@admin.com\";email|s:15:\"admin@admin.com\";user_id|s:1:\"1\";old_last_login|s:10:\"1463830604\";'
+WHERE `id` = 'ac6b189fbfba4f45f27d5098d781ed8bb69ba914'
+SELECT RELEASE_LOCK('ac6b189fbfba4f45f27d5098d781ed8bb69ba914') AS ci_session_lock
+SELECT GET_LOCK('dcd7f27ecaf6d9ed4649127b9772a9c81a3a2aad', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = 'dcd7f27ecaf6d9ed4649127b9772a9c81a3a2aad'
+SELECT `users`.*, `users`.`id` as `id`, `users`.`id` as `user_id`
+FROM `users`
+WHERE `users`.`id` = '1'
+ORDER BY `users`.`id` DESC
+ LIMIT 1
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.001]
+
+SELECT GET_LOCK('dcd7f27ecaf6d9ed4649127b9772a9c81a3a2aad', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = 'dcd7f27ecaf6d9ed4649127b9772a9c81a3a2aad'
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.002]
+
+SELECT GET_LOCK('dcd7f27ecaf6d9ed4649127b9772a9c81a3a2aad', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = 'dcd7f27ecaf6d9ed4649127b9772a9c81a3a2aad'
+SELECT *
+FROM `reponses`
+===[took:0.002]
+
+SELECT GET_LOCK('dcd7f27ecaf6d9ed4649127b9772a9c81a3a2aad', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = 'dcd7f27ecaf6d9ed4649127b9772a9c81a3a2aad'
+SELECT `users`.*, `users`.`id` as `id`, `users`.`id` as `user_id`
+FROM `users`
+WHERE `users`.`id` = '1'
+ORDER BY `users`.`id` DESC
+ LIMIT 1
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.001]
+
+SELECT GET_LOCK('dcd7f27ecaf6d9ed4649127b9772a9c81a3a2aad', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = 'dcd7f27ecaf6d9ed4649127b9772a9c81a3a2aad'
+SELECT *
+FROM `reponses`
+===[took:0.023]
+
+SELECT GET_LOCK('dcd7f27ecaf6d9ed4649127b9772a9c81a3a2aad', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = 'dcd7f27ecaf6d9ed4649127b9772a9c81a3a2aad'
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.027]
+
+SELECT GET_LOCK('dcd7f27ecaf6d9ed4649127b9772a9c81a3a2aad', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = 'dcd7f27ecaf6d9ed4649127b9772a9c81a3a2aad'
+SELECT `users`.*, `users`.`id` as `id`, `users`.`id` as `user_id`
+FROM `users`
+WHERE `users`.`id` = '1'
+ORDER BY `users`.`id` DESC
+ LIMIT 1
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.002]
+
+SELECT GET_LOCK('dcd7f27ecaf6d9ed4649127b9772a9c81a3a2aad', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = 'dcd7f27ecaf6d9ed4649127b9772a9c81a3a2aad'
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.005]
+
+SELECT GET_LOCK('dcd7f27ecaf6d9ed4649127b9772a9c81a3a2aad', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = 'dcd7f27ecaf6d9ed4649127b9772a9c81a3a2aad'
+SELECT *
+FROM `reponses`
+===[took:0.002]
+
+SELECT GET_LOCK('dcd7f27ecaf6d9ed4649127b9772a9c81a3a2aad', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = 'dcd7f27ecaf6d9ed4649127b9772a9c81a3a2aad'
+UPDATE `ci_sessions` SET `timestamp` = 1463868207, `data` = '__ci_last_regenerate|i:1463868207;identity|s:15:\"admin@admin.com\";email|s:15:\"admin@admin.com\";user_id|s:1:\"1\";old_last_login|s:10:\"1463830604\";'
+WHERE `id` = 'dcd7f27ecaf6d9ed4649127b9772a9c81a3a2aad'
+SELECT RELEASE_LOCK('dcd7f27ecaf6d9ed4649127b9772a9c81a3a2aad') AS ci_session_lock
+SELECT GET_LOCK('5422e3f809dc3a6963645c3a554dd5a34358b9ac', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '5422e3f809dc3a6963645c3a554dd5a34358b9ac'
+SELECT `users`.*, `users`.`id` as `id`, `users`.`id` as `user_id`
+FROM `users`
+WHERE `users`.`id` = '1'
+ORDER BY `users`.`id` DESC
+ LIMIT 1
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.001]
+
+SELECT GET_LOCK('5422e3f809dc3a6963645c3a554dd5a34358b9ac', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '5422e3f809dc3a6963645c3a554dd5a34358b9ac'
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.002]
+
+SELECT GET_LOCK('5422e3f809dc3a6963645c3a554dd5a34358b9ac', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '5422e3f809dc3a6963645c3a554dd5a34358b9ac'
+SELECT *
+FROM `reponses`
+===[took:0.008]
+
+SELECT GET_LOCK('5422e3f809dc3a6963645c3a554dd5a34358b9ac', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '5422e3f809dc3a6963645c3a554dd5a34358b9ac'
+SELECT `users`.*, `users`.`id` as `id`, `users`.`id` as `user_id`
+FROM `users`
+WHERE `users`.`id` = '1'
+ORDER BY `users`.`id` DESC
+ LIMIT 1
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.001]
+
+SELECT GET_LOCK('5422e3f809dc3a6963645c3a554dd5a34358b9ac', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '5422e3f809dc3a6963645c3a554dd5a34358b9ac'
+SELECT *
+FROM `reponses`
+===[took:0.002]
+
+SELECT GET_LOCK('5422e3f809dc3a6963645c3a554dd5a34358b9ac', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '5422e3f809dc3a6963645c3a554dd5a34358b9ac'
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.046]
+
+SELECT GET_LOCK('7f72fa2b923cf6e0b491f19ed618edc62179d897', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '7f72fa2b923cf6e0b491f19ed618edc62179d897'
+===[took:0.002]
+
+SELECT GET_LOCK('7f72fa2b923cf6e0b491f19ed618edc62179d897', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '7f72fa2b923cf6e0b491f19ed618edc62179d897'
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.039]
+
+SELECT GET_LOCK('7f72fa2b923cf6e0b491f19ed618edc62179d897', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '7f72fa2b923cf6e0b491f19ed618edc62179d897'
+SELECT *
+FROM `reponses`
+===[took:0.011]
+
+SELECT GET_LOCK('7f72fa2b923cf6e0b491f19ed618edc62179d897', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '7f72fa2b923cf6e0b491f19ed618edc62179d897'
+SELECT `users_groups`.`group_id` as `id`, `groups`.`name`, `groups`.`description`
+FROM `users_groups`
+JOIN `groups` ON `users_groups`.`group_id`=`groups`.`id`
+WHERE `users_groups`.`user_id` = '1'
+SELECT `users`.*, `users`.`id` as `id`, `users`.`id` as `user_id`
+FROM `users`
+SELECT `users_groups`.`group_id` as `id`, `groups`.`name`, `groups`.`description`
+FROM `users_groups`
+JOIN `groups` ON `users_groups`.`group_id`=`groups`.`id`
+WHERE `users_groups`.`user_id` = '1'
+SELECT `users_groups`.`group_id` as `id`, `groups`.`name`, `groups`.`description`
+FROM `users_groups`
+JOIN `groups` ON `users_groups`.`group_id`=`groups`.`id`
+WHERE `users_groups`.`user_id` = '2'
+===[took:0.023]
+
+SELECT GET_LOCK('7f72fa2b923cf6e0b491f19ed618edc62179d897', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '7f72fa2b923cf6e0b491f19ed618edc62179d897'
+SELECT `users`.*, `users`.`id` as `id`, `users`.`id` as `user_id`
+FROM `users`
+WHERE `users`.`id` = '1'
+ORDER BY `users`.`id` DESC
+ LIMIT 1
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.001]
+
+SELECT GET_LOCK('7f72fa2b923cf6e0b491f19ed618edc62179d897', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '7f72fa2b923cf6e0b491f19ed618edc62179d897'
+SELECT *
+FROM `reponses`
+===[took:0.048]
+
+SELECT GET_LOCK('7f72fa2b923cf6e0b491f19ed618edc62179d897', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '7f72fa2b923cf6e0b491f19ed618edc62179d897'
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.028]
+
+SELECT GET_LOCK('7f72fa2b923cf6e0b491f19ed618edc62179d897', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '7f72fa2b923cf6e0b491f19ed618edc62179d897'
+UPDATE `ci_sessions` SET `timestamp` = 1463932211, `data` = '__ci_last_regenerate|i:1463932211;identity|s:15:\"admin@admin.com\";email|s:15:\"admin@admin.com\";user_id|s:1:\"1\";old_last_login|s:10:\"1463860099\";'
+WHERE `id` = '7f72fa2b923cf6e0b491f19ed618edc62179d897'
+SELECT RELEASE_LOCK('7f72fa2b923cf6e0b491f19ed618edc62179d897') AS ci_session_lock
+SELECT GET_LOCK('bf668f91a4d2b50893b6d3a21c74ec21041b5465', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = 'bf668f91a4d2b50893b6d3a21c74ec21041b5465'
+SELECT `users`.*, `users`.`id` as `id`, `users`.`id` as `user_id`
+FROM `users`
+WHERE `users`.`id` = '1'
+ORDER BY `users`.`id` DESC
+ LIMIT 1
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.002]
+
+SELECT GET_LOCK('bf668f91a4d2b50893b6d3a21c74ec21041b5465', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = 'bf668f91a4d2b50893b6d3a21c74ec21041b5465'
+SELECT *
+FROM `reponses`
+===[took:0.002]
+
+SELECT GET_LOCK('bf668f91a4d2b50893b6d3a21c74ec21041b5465', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = 'bf668f91a4d2b50893b6d3a21c74ec21041b5465'
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.003]
+
+SELECT GET_LOCK('bf668f91a4d2b50893b6d3a21c74ec21041b5465', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = 'bf668f91a4d2b50893b6d3a21c74ec21041b5465'
+SELECT `users`.*, `users`.`id` as `id`, `users`.`id` as `user_id`
+FROM `users`
+WHERE `users`.`id` = '1'
+ORDER BY `users`.`id` DESC
+ LIMIT 1
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.002]
+
+SELECT GET_LOCK('bf668f91a4d2b50893b6d3a21c74ec21041b5465', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = 'bf668f91a4d2b50893b6d3a21c74ec21041b5465'
+SELECT `users`.*, `users`.`id` as `id`, `users`.`id` as `user_id`
+FROM `users`
+WHERE `users`.`id` = '1'
+ORDER BY `users`.`id` DESC
+ LIMIT 1
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.001]
+
+SELECT GET_LOCK('bf668f91a4d2b50893b6d3a21c74ec21041b5465', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = 'bf668f91a4d2b50893b6d3a21c74ec21041b5465'
+SELECT *
+FROM `reponses`
+===[took:0.002]
+
+SELECT GET_LOCK('bf668f91a4d2b50893b6d3a21c74ec21041b5465', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = 'bf668f91a4d2b50893b6d3a21c74ec21041b5465'
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.053]
+
+SELECT GET_LOCK('bf668f91a4d2b50893b6d3a21c74ec21041b5465', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = 'bf668f91a4d2b50893b6d3a21c74ec21041b5465'
+SELECT `users`.*, `users`.`id` as `id`, `users`.`id` as `user_id`
+FROM `users`
+WHERE `users`.`id` = '1'
+ORDER BY `users`.`id` DESC
+ LIMIT 1
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.003]
+
+SELECT GET_LOCK('bf668f91a4d2b50893b6d3a21c74ec21041b5465', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = 'bf668f91a4d2b50893b6d3a21c74ec21041b5465'
+SELECT *
+FROM `reponses`
+===[took:0.027]
+
+SELECT GET_LOCK('bf668f91a4d2b50893b6d3a21c74ec21041b5465', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = 'bf668f91a4d2b50893b6d3a21c74ec21041b5465'
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.002]
+
+SELECT GET_LOCK('bf668f91a4d2b50893b6d3a21c74ec21041b5465', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = 'bf668f91a4d2b50893b6d3a21c74ec21041b5465'
+SELECT `users`.*, `users`.`id` as `id`, `users`.`id` as `user_id`
+FROM `users`
+WHERE `users`.`id` = '1'
+ORDER BY `users`.`id` DESC
+ LIMIT 1
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.001]
+
+SELECT GET_LOCK('bf668f91a4d2b50893b6d3a21c74ec21041b5465', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = 'bf668f91a4d2b50893b6d3a21c74ec21041b5465'
+SELECT `users`.*, `users`.`id` as `id`, `users`.`id` as `user_id`
+FROM `users`
+WHERE `users`.`id` = '1'
+ORDER BY `users`.`id` DESC
+ LIMIT 1
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.001]
+
+SELECT GET_LOCK('bf668f91a4d2b50893b6d3a21c74ec21041b5465', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = 'bf668f91a4d2b50893b6d3a21c74ec21041b5465'
+UPDATE `ci_sessions` SET `timestamp` = 1463932675, `data` = '__ci_last_regenerate|i:1463932675;identity|s:15:\"admin@admin.com\";email|s:15:\"admin@admin.com\";user_id|s:1:\"1\";old_last_login|s:10:\"1463860099\";'
+WHERE `id` = 'bf668f91a4d2b50893b6d3a21c74ec21041b5465'
+SELECT RELEASE_LOCK('bf668f91a4d2b50893b6d3a21c74ec21041b5465') AS ci_session_lock
+SELECT GET_LOCK('37d19d3eb8cf2355dda4a272c2e9543215ac58e9', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '37d19d3eb8cf2355dda4a272c2e9543215ac58e9'
+SELECT `users`.*, `users`.`id` as `id`, `users`.`id` as `user_id`
+FROM `users`
+WHERE `users`.`id` = '1'
+ORDER BY `users`.`id` DESC
+ LIMIT 1
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.002]
+
+SELECT GET_LOCK('37d19d3eb8cf2355dda4a272c2e9543215ac58e9', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '37d19d3eb8cf2355dda4a272c2e9543215ac58e9'
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.01]
+
+SELECT GET_LOCK('37d19d3eb8cf2355dda4a272c2e9543215ac58e9', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '37d19d3eb8cf2355dda4a272c2e9543215ac58e9'
+SELECT *
+FROM `reponses`
+===[took:0.034]
+
+SELECT GET_LOCK('37d19d3eb8cf2355dda4a272c2e9543215ac58e9', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '37d19d3eb8cf2355dda4a272c2e9543215ac58e9'
+SELECT `users`.*, `users`.`id` as `id`, `users`.`id` as `user_id`
+FROM `users`
+WHERE `users`.`id` = '1'
+ORDER BY `users`.`id` DESC
+ LIMIT 1
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.001]
+
+SELECT GET_LOCK('37d19d3eb8cf2355dda4a272c2e9543215ac58e9', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '37d19d3eb8cf2355dda4a272c2e9543215ac58e9'
+SELECT *
+FROM `reponses`
+===[took:0.011]
+
+SELECT GET_LOCK('37d19d3eb8cf2355dda4a272c2e9543215ac58e9', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '37d19d3eb8cf2355dda4a272c2e9543215ac58e9'
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.036]
+
+SELECT GET_LOCK('37d19d3eb8cf2355dda4a272c2e9543215ac58e9', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '37d19d3eb8cf2355dda4a272c2e9543215ac58e9'
+UPDATE `ci_sessions` SET `timestamp` = 1463933001, `data` = '__ci_last_regenerate|i:1463933001;identity|s:15:\"admin@admin.com\";email|s:15:\"admin@admin.com\";user_id|s:1:\"1\";old_last_login|s:10:\"1463860099\";'
+WHERE `id` = '37d19d3eb8cf2355dda4a272c2e9543215ac58e9'
+SELECT RELEASE_LOCK('37d19d3eb8cf2355dda4a272c2e9543215ac58e9') AS ci_session_lock
+SELECT GET_LOCK('1f14405e172ef827848731f5c149773ff2a22ed9', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '1f14405e172ef827848731f5c149773ff2a22ed9'
+SELECT `users`.*, `users`.`id` as `id`, `users`.`id` as `user_id`
+FROM `users`
+WHERE `users`.`id` = '1'
+ORDER BY `users`.`id` DESC
+ LIMIT 1
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.001]
+
+SELECT GET_LOCK('1f14405e172ef827848731f5c149773ff2a22ed9', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '1f14405e172ef827848731f5c149773ff2a22ed9'
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.002]
+
+SELECT GET_LOCK('1f14405e172ef827848731f5c149773ff2a22ed9', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '1f14405e172ef827848731f5c149773ff2a22ed9'
+SELECT *
+FROM `reponses`
+===[took:0.012]
+
+SELECT GET_LOCK('1f14405e172ef827848731f5c149773ff2a22ed9', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '1f14405e172ef827848731f5c149773ff2a22ed9'
+SELECT `users`.*, `users`.`id` as `id`, `users`.`id` as `user_id`
+FROM `users`
+WHERE `users`.`id` = '1'
+ORDER BY `users`.`id` DESC
+ LIMIT 1
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.002]
+
+SELECT GET_LOCK('1f14405e172ef827848731f5c149773ff2a22ed9', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '1f14405e172ef827848731f5c149773ff2a22ed9'
+SELECT *
+FROM `reponses`
+===[took:0.001]
+
+SELECT GET_LOCK('1f14405e172ef827848731f5c149773ff2a22ed9', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '1f14405e172ef827848731f5c149773ff2a22ed9'
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.014]
+
+SELECT GET_LOCK('1f14405e172ef827848731f5c149773ff2a22ed9', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '1f14405e172ef827848731f5c149773ff2a22ed9'
+SELECT `users`.*, `users`.`id` as `id`, `users`.`id` as `user_id`
+FROM `users`
+WHERE `users`.`id` = '1'
+ORDER BY `users`.`id` DESC
+ LIMIT 1
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.002]
+
+SELECT GET_LOCK('1f14405e172ef827848731f5c149773ff2a22ed9', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '1f14405e172ef827848731f5c149773ff2a22ed9'
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.001]
+
+SELECT GET_LOCK('1f14405e172ef827848731f5c149773ff2a22ed9', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '1f14405e172ef827848731f5c149773ff2a22ed9'
+SELECT *
+FROM `reponses`
+===[took:0.012]
+
+SELECT GET_LOCK('1f14405e172ef827848731f5c149773ff2a22ed9', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '1f14405e172ef827848731f5c149773ff2a22ed9'
+SELECT `users`.*, `users`.`id` as `id`, `users`.`id` as `user_id`
+FROM `users`
+WHERE `users`.`id` = '1'
+ORDER BY `users`.`id` DESC
+ LIMIT 1
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.001]
+
+SELECT GET_LOCK('1f14405e172ef827848731f5c149773ff2a22ed9', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '1f14405e172ef827848731f5c149773ff2a22ed9'
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.002]
+
+SELECT GET_LOCK('1f14405e172ef827848731f5c149773ff2a22ed9', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '1f14405e172ef827848731f5c149773ff2a22ed9'
+SELECT *
+FROM `reponses`
+===[took:0.001]
+
+SELECT GET_LOCK('1f14405e172ef827848731f5c149773ff2a22ed9', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '1f14405e172ef827848731f5c149773ff2a22ed9'
+UPDATE `ci_sessions` SET `timestamp` = 1463933893, `data` = '__ci_last_regenerate|i:1463933893;identity|s:15:\"admin@admin.com\";email|s:15:\"admin@admin.com\";user_id|s:1:\"1\";old_last_login|s:10:\"1463860099\";'
+WHERE `id` = '1f14405e172ef827848731f5c149773ff2a22ed9'
+SELECT RELEASE_LOCK('1f14405e172ef827848731f5c149773ff2a22ed9') AS ci_session_lock
+SELECT GET_LOCK('7394e0aead34fa5cd5f8105d2c3937a4ac5a770c', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '7394e0aead34fa5cd5f8105d2c3937a4ac5a770c'
+SELECT `users`.*, `users`.`id` as `id`, `users`.`id` as `user_id`
+FROM `users`
+WHERE `users`.`id` = '1'
+ORDER BY `users`.`id` DESC
+ LIMIT 1
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.001]
+
+SELECT GET_LOCK('7394e0aead34fa5cd5f8105d2c3937a4ac5a770c', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '7394e0aead34fa5cd5f8105d2c3937a4ac5a770c'
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.001]
+
+SELECT GET_LOCK('7394e0aead34fa5cd5f8105d2c3937a4ac5a770c', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '7394e0aead34fa5cd5f8105d2c3937a4ac5a770c'
+SELECT *
+FROM `reponses`
+===[took:0.002]
+
+SELECT GET_LOCK('7394e0aead34fa5cd5f8105d2c3937a4ac5a770c', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '7394e0aead34fa5cd5f8105d2c3937a4ac5a770c'
+SELECT `users`.*, `users`.`id` as `id`, `users`.`id` as `user_id`
+FROM `users`
+WHERE `users`.`id` = '1'
+ORDER BY `users`.`id` DESC
+ LIMIT 1
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.052]
+
+SELECT GET_LOCK('7394e0aead34fa5cd5f8105d2c3937a4ac5a770c', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '7394e0aead34fa5cd5f8105d2c3937a4ac5a770c'
+SELECT *
+FROM `reponses`
+===[took:0.014]
+
+SELECT GET_LOCK('7394e0aead34fa5cd5f8105d2c3937a4ac5a770c', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '7394e0aead34fa5cd5f8105d2c3937a4ac5a770c'
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.019]
+
+SELECT GET_LOCK('7394e0aead34fa5cd5f8105d2c3937a4ac5a770c', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '7394e0aead34fa5cd5f8105d2c3937a4ac5a770c'
+SELECT `users`.*, `users`.`id` as `id`, `users`.`id` as `user_id`
+FROM `users`
+WHERE `users`.`id` = '1'
+ORDER BY `users`.`id` DESC
+ LIMIT 1
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.004]
+
+SELECT GET_LOCK('7394e0aead34fa5cd5f8105d2c3937a4ac5a770c', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '7394e0aead34fa5cd5f8105d2c3937a4ac5a770c'
+SELECT *
+FROM `reponses`
+===[took:0.001]
+
+SELECT GET_LOCK('7394e0aead34fa5cd5f8105d2c3937a4ac5a770c', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '7394e0aead34fa5cd5f8105d2c3937a4ac5a770c'
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.002]
+
+SELECT GET_LOCK('1377fa7b915124f75ce5dfae8bd2cb7e1b442dce', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '1377fa7b915124f75ce5dfae8bd2cb7e1b442dce'
+SELECT COUNT(*) AS `numrows`
+FROM `users`
+WHERE `email` = 'admin@admin.com'
+SELECT `email`, `id`, `email`, `last_login`
+FROM `users`
+WHERE `email` = 'admin@admin.com'
+AND `remember_code` = 'gyOEfhHr2UkJSGoNiMXiVe'
+ORDER BY `id` DESC
+ LIMIT 1
+UPDATE `users` SET `last_login` = 1463945493
+WHERE `id` = '1'
+SELECT `users`.*, `users`.`id` as `id`, `users`.`id` as `user_id`
+FROM `users`
+WHERE `users`.`id` = '1'
+ORDER BY `users`.`id` DESC
+ LIMIT 1
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.002]
+
+SELECT GET_LOCK('1377fa7b915124f75ce5dfae8bd2cb7e1b442dce', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '1377fa7b915124f75ce5dfae8bd2cb7e1b442dce'
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.005]
+
+SELECT GET_LOCK('1377fa7b915124f75ce5dfae8bd2cb7e1b442dce', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '1377fa7b915124f75ce5dfae8bd2cb7e1b442dce'
+SELECT *
+FROM `reponses`
+===[took:0.004]
+
+SELECT GET_LOCK('1377fa7b915124f75ce5dfae8bd2cb7e1b442dce', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '1377fa7b915124f75ce5dfae8bd2cb7e1b442dce'
+SELECT `users`.*, `users`.`id` as `id`, `users`.`id` as `user_id`
+FROM `users`
+WHERE `users`.`id` = '1'
+ORDER BY `users`.`id` DESC
+ LIMIT 1
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.025]
+
+SELECT GET_LOCK('1377fa7b915124f75ce5dfae8bd2cb7e1b442dce', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '1377fa7b915124f75ce5dfae8bd2cb7e1b442dce'
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.077]
+
+SELECT GET_LOCK('1377fa7b915124f75ce5dfae8bd2cb7e1b442dce', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '1377fa7b915124f75ce5dfae8bd2cb7e1b442dce'
+SELECT *
+FROM `reponses`
+===[took:0.12]
+
+SELECT GET_LOCK('1377fa7b915124f75ce5dfae8bd2cb7e1b442dce', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '1377fa7b915124f75ce5dfae8bd2cb7e1b442dce'
+UPDATE `ci_sessions` SET `timestamp` = 1463945803, `data` = '__ci_last_regenerate|i:1463945803;identity|s:15:\"admin@admin.com\";email|s:15:\"admin@admin.com\";user_id|s:1:\"1\";old_last_login|s:10:\"1463931886\";'
+WHERE `id` = '1377fa7b915124f75ce5dfae8bd2cb7e1b442dce'
+SELECT RELEASE_LOCK('1377fa7b915124f75ce5dfae8bd2cb7e1b442dce') AS ci_session_lock
+SELECT GET_LOCK('218f197799b7d20c69f78dbda06b9c4738bb071c', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '218f197799b7d20c69f78dbda06b9c4738bb071c'
+SELECT `users`.*, `users`.`id` as `id`, `users`.`id` as `user_id`
+FROM `users`
+WHERE `users`.`id` = '1'
+ORDER BY `users`.`id` DESC
+ LIMIT 1
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.002]
+
+SELECT GET_LOCK('218f197799b7d20c69f78dbda06b9c4738bb071c', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '218f197799b7d20c69f78dbda06b9c4738bb071c'
+SELECT *
+FROM `reponses`
+===[took:0.03]
+
+SELECT GET_LOCK('218f197799b7d20c69f78dbda06b9c4738bb071c', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '218f197799b7d20c69f78dbda06b9c4738bb071c'
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.017]
+
+SELECT GET_LOCK('218f197799b7d20c69f78dbda06b9c4738bb071c', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '218f197799b7d20c69f78dbda06b9c4738bb071c'
+SELECT `users`.*, `users`.`id` as `id`, `users`.`id` as `user_id`
+FROM `users`
+WHERE `users`.`id` = '1'
+ORDER BY `users`.`id` DESC
+ LIMIT 1
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.002]
+
+SELECT GET_LOCK('218f197799b7d20c69f78dbda06b9c4738bb071c', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '218f197799b7d20c69f78dbda06b9c4738bb071c'
+SELECT `id_question`, `libelle`, `motscles`, `statusGenerale`, `statusStatistiques`, `statusParticulier`, `statusProfessionnel`, `dateAjout`
+FROM `question`
+JOIN `categorie` ON `categorie`.`id` = `question`.`keywordId`
+===[took:0.002]
+
+SELECT GET_LOCK('218f197799b7d20c69f78dbda06b9c4738bb071c', 300) AS ci_session_lock
+SELECT `data`
+FROM `ci_sessions`
+WHERE `id` = '218f197799b7d20c69f78dbda06b9c4738bb071c'
+SELECT *
+FROM `reponses`
+===[took:0.001]
+

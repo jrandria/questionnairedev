@@ -158,33 +158,41 @@ $(function() {
         ]
       });
         */
-        $.ajax({
-                type:'GET',
-                url: 'QuestionnaireController/sendResponsesToTable',
-                datatype: 'json',
-                success: function(rep){
-                  var rep = $.parseJSON(rep);
-                  //var rep = $.parseJSON(JSON.stringify(rep));
-                 console.log(rep);
-                   $.each(rep, function(index, value) {
-                      var repVal=rep[index];
-                      var $TableRow = $('<tr></tr>'),
-                            $TableDataColID='<td>'+repVal.id+'</td>',
-                            $TableDataColQuestID='<td>'+phpUnserialize(repVal.idquestions)+'</td>',
-                            $TableDataColRep='<td>'+phpUnserialize(repVal.reponses_recu)+'</td>',
-                            $TableDataColIDClient = '<td>'+repVal.idClient+'</td>',
-                            $TableDataColSatisf='<td><i class="fa fa-star text-warning"></i>'+repVal.satisfaction+'</td>',
-                            $TableDataColDateAjout='<td>'+repVal.dateajout+'</td>';
+          $.ajax({
+                  type:'GET',
+                  url: 'QuestionnaireController/sendResponsesToTable',
+                  datatype: 'json',
+                  success: function(rep){
+                    var rep = $.parseJSON(rep);
+                    var divElement='<div class="progress progress-xs no-margn margn-t-xs"><div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%"><span class="sr-only">20% Complete (warning)</span></div></div>';
 
-                        var $AllTDRep=$TableRow.append($TableDataColID).append($TableDataColQuestID).append($TableDataColRep).append($TableDataColIDClient).append($TableDataColSatisf).append($TableDataColDateAjout);
+                    //var rep = $.parseJSON(JSON.stringify(rep));
+                   console.log(rep);
+                     $.each(rep, function(index, value) {
+                        var repVal=rep[index];
+                        var TableRow = $('<tr></tr>'),
+                              TableDataColID='<td>'+repVal.id+'</td>',
+                              TableDataColQuestID='<td>'+phpUnserialize(repVal.idquestions)+'</td>',
+                              TableDataColRep='<td>'+phpUnserialize(repVal.reponses_recu)+'</td>',
+                              TableDataColIDClient = '<td>'+repVal.idClient+'</td>',
+                              TableDataColSatisf='<td><i class="fa fa-star text-warning"></i>'+repVal.satisfaction+'</td>',
+                              TableDataColTauxSatisf="<td class='txSatisf'>20%</td>",
+                              TableDataColChartSatisf="<td class='miniChart'></td>",
+                              TableDataColDateAjout='<td>'+repVal.dateajout+'</td>';
+                          var AllTDRep=TableRow.append(TableDataColID).append(TableDataColQuestID).append(TableDataColRep).append(TableDataColIDClient).append(TableDataColSatisf).append(TableDataColTauxSatisf).append(TableDataColChartSatisf).append(TableDataColDateAjout);
 
-                        $("#tbodyReponsesTables").append($AllTDRep);
-                    });
-                },
-                error: function(jqXHR, textStatus, ex) {
-                  console.log(textStatus + "," + ex + "," + jqXHR.responseText);
-                }
-              });
+                          $("#tbodyReponsesTables").append(AllTDRep);
+                          
+                          //$("#tbodyReponsesTables").find('.miniChart').css({"background-color":"#ffe"});
+                      });
+                     $("#tbodyReponsesTables .miniChart").append(divElement);
+                  },
+                  error: function(jqXHR, textStatus, ex) {
+                    console.log(textStatus + "," + ex + "," + jqXHR.responseText);
+                  }
+          });
+          
+
         }
 
     function sendDataToTableQuestionByAjax() {
