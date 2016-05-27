@@ -78,7 +78,7 @@
                   
                                           <div class="panel-body">
 
-                                              <table id="tableListeReponses" class="table table-bordered  table-striped">
+                                              <table id="tableListeReponses" class="table table-bordered  table-striped table-hover">
                                                  <thead>
                                                     <tr>
                                                       <TH colspan="8" scope="colgroup" class="text-center">Liste des réponses reçus</TH>
@@ -95,7 +95,7 @@
                                                         <th scope="col" colspan="3"   class="text-center">Satisfaction</th>
                                                         <th scope="col" >dateAjout</th>
                                                     </tr>
-                                                    <tr>
+                                                    <tr class="clickable-row">
                                                       <!--<th scope="col" align="right">idquestions</th>
                                                       <th scope="col" >reponses_recu</th>
                                                       <th scope="col" >idClient</th>
@@ -163,6 +163,8 @@
           </div>
          <!-- PopUp Modal Pour ajout de client -->
           <?php require_once(__DIR__.'/../pop/createQuestionModal.php'); ?>
+          <?php require_once(__DIR__.'/../pop/viewReponsesModal.php'); ?>
+          
     </div>
         <!-- Fin Wraper -->
 

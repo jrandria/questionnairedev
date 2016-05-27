@@ -63,16 +63,16 @@ class QuestionnaireController extends CI_Controller {
 	/**
 	 * Cette fonction affiche le view questionnaire pour le pro
 	 */
-	function load_questions_pro(){
+	function load_questions_pro() {
 
 		//$this->index() Si besoin de se connecter avant d'arriver sur la page
 		
-		$this->load_questions();
+		$this->load_questions();//A modifier pour la version PRO
 		
 	}
 
 
-	function load_modif_utilisateur(){
+	function load_modif_utilisateur() {
 
 		//Controle de la session
 		$this->index();
@@ -93,17 +93,92 @@ class QuestionnaireController extends CI_Controller {
 
 	}
 
+	function load_parametrages() {
+
+		//Controle de la session
+		$this->index();
+		$user = $this->ion_auth->user()->row();
+		$this->data['Nom']=$user->last_name;
+		$this->data['Prenom']=$user->first_name;
+
+		$this->loadPage('parametrageQuestionnaire',1,$this->data);
+
+	}
+
+
+
 	
 	
 	/**
 	 * { Cette fonction sert à valider d'abord les reponses envoyés par le client si nécessaireS }
 	 */
 	function validate_responses(){
+
 		$reponses= array();
+
 		$dataTest=array(1,2,3);
-		//$tableau des idQuestions
-		$dataidquestions = $this->session->userdata('$dataidquestions');
-		//Le tableau des réponses (dépendents du nombre de question )
+		//on récupère les valeurs passées par la view : $tableau des idQuestions
+		
+		if($this->session->has_userdata('$dataidquestions')){
+			$dataidquestions = $this->session->userdata('$dataidquestions');
+		}else {
+			echo 'Attention une erreur a été détécté,veuillez contactez votre administrateur';//logs et redirection à faire
+		}
+		echo 'ID des questions :';
+		$this->util->printr($dataidquestions);
+
+		$nbReponses=count($dataidquestions);
+
+		for ($i=0; $i <$nbReponses ; $i++) { 
+			$reponses[]=$this->input->post('reponse'.$i);
+		}
+
+		echo 'Réponses reçu :';
+		$this->util->printr($reponses);
+
+
+		$sanitizedReponsesData = array_filter($reponses,
+			function($var){//Callback qui enlène les valeurs null de monArray
+    			return !is_null($var);
+		});
+
+		echo 'Réponses reçu nettoyé:';
+		$this->util->printr($sanitizedReponsesData);
+
+		$resultReponsesDiff = array_diff($reponses,$sanitizedReponsesData);
+
+		echo 'Réponses laissés vide:';
+		$this->util->printr($resultReponsesDiff);
+
+		echo 'ID correct sans réponses vide:';
+		$resultIdQuestionsDiff = array_intersect_key($dataidquestions,$sanitizedReponsesData);
+
+		$this->util->printr($resultIdQuestionsDiff);
+
+		echo 'pourcentage : <br />';
+		echo 'Total des réponses:'.count($sanitizedReponsesData).' et des questions :'.count($resultIdQuestionsDiff).'<br />';
+		$totalDesPointsCoches=count($sanitizedReponsesData)*5;
+		
+		$totalDeMesPoints=array_sum($sanitizedReponsesData);
+		echo 'Total des points:'.$totalDesPointsCoches.'<br/>';
+		echo "Mes totaux de points :".$totalDeMesPoints.'<br />'; 
+		if($totalDesPointsCoches!=0){
+			echo "Ma pourcentage :".floor(($totalDeMesPoints*100)/$totalDesPointsCoches).'<br />'; 
+		}else{
+			echo "Erreur division par Zero ";
+		}
+		
+
+
+
+
+
+
+
+		//Nettoyer le tableau des réponses pour faciliter le calcul
+
+		/*
+		Le tableau des réponses (dépendents du nombre de question )
 		$nbReponses=count($dataidquestions);
 
 		for ($i=0; $i <$nbReponses ; $i++) { 
@@ -118,19 +193,34 @@ class QuestionnaireController extends CI_Controller {
 			'satisfaction' => $satisf
 		);
 
+		print_r($dataidquestions);
+		*/
+
+
+		/*foreach ($dataResponses as $key =>  $value){
+			
+			if($key=='idQuestions'){
+				print_r(unserialize($value));
+			}
+
+		}
+
 		$this->session->set_flashdata('$dataResponses',$dataResponses);
-		$this->session->set_flashdata('$statusSatisf',$satisf);
+		$this->session->set_flashdata('$statusSatisf',$satisf);*/
 
 		//On rédirige la page dd'insertion des infos client
-		$data['toto']='toto';
-		$this->loadPage('create_client',0,$data);
+		/*$data['toto']='toto';
+		$this->loadPage('create_client',0,$data);*/
 
 	}
 
 
+
+
+
 	function submitallclientresponses(){
 
-		
+		//On stocke temporairement les données
 		$dataResponsesFlash = $this->session->userdata('$dataResponses');
 		$statusSatisfFlash = $this->session->userdata('$statusSatisf');
 
@@ -143,6 +233,8 @@ class QuestionnaireController extends CI_Controller {
 		);
 
 		$idClient=$this->reponsesModel->insertClient($dataClient);
+		echo "$dataResponsesFlash";
+		
 
 		//On insère les réponses
 		$dataResponsesToInsert=$this->util->array_insert_associative($dataResponsesFlash,array('idClient' => $idClient),2);
@@ -152,6 +244,7 @@ class QuestionnaireController extends CI_Controller {
 		$this->reponsesModel->insertResponses($dataResponsesToInsert);
 
 		$this->redirectUser($statusSatisfFlash);
+		
 
 	}
 

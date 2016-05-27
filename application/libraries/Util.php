@@ -4,7 +4,7 @@ class Util {
 
 	public function __construct()
 	{
-
+		
 	}
 
 	function array_insert_numeric(&$array, $position, $insert)
@@ -38,5 +38,11 @@ class Util {
 		}
 				
 		return $valBool;
+	}
+
+	function printr($data) {
+	   echo "<pre>";
+	      print_r($data);
+	   echo "</pre>";
 	}
 }

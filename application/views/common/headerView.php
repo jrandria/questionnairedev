@@ -19,6 +19,7 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('public/assets/css/app/app.v1.css');?>" /> 
   <link rel="stylesheet" type="text/css" href="<?php echo base_url('public/assets/css/fullcalendar/fullcalendar.min.css');?>" /> 
 
+
   <!--Pour le switcher -->
  <link rel="stylesheet" type="text/css" href="<?php echo base_url('public/assets/css/switch-buttons/switch-buttons.css');?>" /> 
   <!-- Chosen Select  -->

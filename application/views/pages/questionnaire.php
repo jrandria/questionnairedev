@@ -30,7 +30,6 @@
                         <div class="panel-body">
                             <div class="col-lg-12">
 
-
 									<!--<div><h1>Questionnaire satisfaction</h1></div>-->
 									<?php echo form_open("validateResponses");?>
 
@@ -67,11 +66,21 @@
 														}
 														
 
-														$this->session->set_flashdata('$dataidquestions', $dataidquestions);
+														$this->session->set_userdata('$dataidquestions', $dataidquestions);//On met temporairemenent les id et on envoi au controlleur
 													}?>
 												<input id="checkServerRepID" type="text" hidden="true" value="<?php echo ''.$this->session->userdata('$reponseServer'); ?>"></input>
 												
-												<button type="submit" id="submitquestionPart" class="btn btn-info" name="submitquestion" value="valider">Valider</button>
+											</div>
+											
+										</div>
+
+										<div class="form-group">
+											<button type="submit" id="submitquestionPart" class="btn btn-info" name="submitquestion" value="valider">Valider</button>
+										</div>
+										<div id="TauxDeProgression">
+											<h3>Taux de satisfaction:</h3>
+											<div class="progress progress-striped active col-lg-4">
+												<div class="progress-bar progress-bar-success" data-transitiongoal="100"></div>
 											</div>
 										</div>
 									</form>
@@ -81,15 +90,141 @@
 				</div>
 	</div>
 </div>
+<?php require_once(__DIR__.'/../pop/createCommentModal.php'); ?>
 </section>
 <script type="text/javascript">
 $(function(){
-	var checkServerRep = $("#checkServerRepID").val();
+		var checkServerRep = $("#checkServerRepID").val();
 
-	if(checkServerRep){
-		notie.alert(1, 'Questionnaire envoyé avec succès!',2);
-	}
-});
-	
+		var arrayOfCheckedValue={};
+		var dataArray;
+		var pourcentage;
+
+		//Prototype Javascrit pour calculer la somme des éléments dans un tableau
+		Array.prototype.sum = function(){
+		    var sum = 0;
+		    this.map(function(item){
+		        sum += item;
+		    });
+		    return sum;
+		}
+
+
+		if(checkServerRep){
+			notie.alert(1, 'Questionnaire envoyé avec succès!',2);
+		}
+
+
+		$('input[type=radio]').change(function(event) {
+			
+			totalDeMesPoints=getAllCheckedValue(event);
+			totalDeTousLesPoints=(dataArray.length)*5;
+			//On s'assure de ne pas avoir une division par zero !
+			pourcentage=(totalDeTousLesPoints!=0) ? Math.floor((totalDeMesPoints*100)/totalDeTousLesPoints) : null ;//On arrondit à la valeur inférieur
+
+			updateProgressBarValue(pourcentage);
+    	});
+
+    	function getAllCheckedValue(event) {
+
+    		$(':radio:checked').each(function(event){
+    			arrayOfCheckedValue[this.name]=this.value;
+    		});
+
+    		sortedObj=sortArrayObjectByKey(arrayOfCheckedValue);//On arrange par clé 
+    		dataArray = extractValuesFromArrayObject(sortedObj);//on récupère seulement les valeurs 
+    		//console.log(dataArray);
+    		var totalValuesInarray=arraySum(dataArray);
+			//console.log(dataArray.sum());
+    		return dataArray.sum();
+    	}
+
+    	function extractValuesFromArrayObject(arrayOfObject) {
+    		
+    		dataArray=$.map(arrayOfObject,function(v){
+				return parseInt(v);
+			});
+			return dataArray;
+    	}
+
+    	function sortArrayObjectByKey(arrayOfObject) {
+		    
+		    var keys = [];
+		    var sorted_obj = {};
+
+		    for(var key in arrayOfObject){
+		        if(arrayOfObject.hasOwnProperty(key)){
+		            keys.push(key);
+		        }
+		    }
+
+		    // arrangement des keys
+		    keys.sort();
+
+		    // Créer un array basé sur l'array arrangé :Keys
+		    jQuery.each(keys, function(i, key){
+		        sorted_obj[key] = arrayOfObject[key];
+		    });
+
+   			 return sorted_obj;
+    	};
+
+    	function arraySum(array){
+			  var total = 0,
+			      len = array.length;
+
+			  for (var i = 0; i < len; i++){
+			    total += array[i];
+			  }
+
+			  return total;
+		}
+
+    	function updateProgressBarValue(value) {
+    		var $pb = $('#TauxDeProgression  .progress-bar');
+
+    		if(value<50){
+    			$pb.attr('class','progress-bar');//Enlèver toutes les classes sauf progress-bar
+    			$pb.addClass('progress-bar-danger');//On ajoute une class                                 //
+    			/*Une attente de qlqs secondes avant */
+    			/*setTimeout(function(){
+		       		$pb.addClass("progress-bar-danger");
+		   		}, 5);*/
+			}else if(50<value && value<75){
+				$pb.attr('class','progress-bar');
+				$pb.addClass('progress-bar-warning');
+			}else {
+				$pb.attr('class','progress-bar');
+				$pb.addClass('progress-bar-success');
+			}
+
+    		$('#TauxDeProgression .progress-bar').attr('data-transitiongoal', 0).progressbar();
+    		$pb.attr('data-transitiongoal',value);
+
+
+    		$pb.progressbar({
+				display_text:'fill'
+			});
+    	}
+
+		$('#submitquestionPart').on('click',function(event){
+			event.preventDefault();
+
+
+			if(pourcentage !== null && pourcentage<75){
+				openModal('#modalCreateComment');
+			}else if (pourcentage !==null && pourcentage >75) {
+				alert('Client moyennement satisfait envoi de donnée au bdd'+pourcentage);
+				//window.location.replace("https://www.facebook.com/Econcept-informatique-138047422928154/?fref=ts");
+				$(location).attr('href','https://www.facebook.com/Econcept-informatique-138047422928154/?fref=ts');
+			}
+
+		})
+
+		function openModal(element){
+		  $(element).modal();
+		}
+
+});	
 	
 </script>

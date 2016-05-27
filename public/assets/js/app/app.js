@@ -79,7 +79,22 @@ $(function() {
     $("#btnValiderPop").on('click', function(event) {
     	event.preventDefault();
         sendDataToTableQuestionByAjax();
-    });    
+    });
+
+    /*$('tr .clickable-row').click(function (event) {
+          alert($(this).attr('id')); 
+          console.log('toto');
+    });
+
+     $("#tableListeReponses").delegate("tr .clickable-row", "click", function(){
+        alert("Click!");
+    });*/
+
+     $('#tableListeReponses').on('click', 'tr', function (e) {
+          var value=$(this).closest('tr').children('td:first').text();//On récupère l'id
+
+          $('#modalviewReponses').modal();
+    });
 
     
     /*--APPEL AJAX pour les nouvelles questions dans la base de donnée---------*/
@@ -165,7 +180,8 @@ $(function() {
                   success: function(rep){
                     var rep = $.parseJSON(rep);
                     var divElement='<div class="progress progress-xs no-margn margn-t-xs"><div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%"><span class="sr-only">20% Complete (warning)</span></div></div>';
-
+                    var starListPlein='<td><i class="fa fa-star text-warning"></i></td>';
+                    var starListVide='<td><i class="fa fa-star "></i></td>';
                     //var rep = $.parseJSON(JSON.stringify(rep));
                    console.log(rep);
                      $.each(rep, function(index, value) {
@@ -175,25 +191,39 @@ $(function() {
                               TableDataColQuestID='<td>'+phpUnserialize(repVal.idquestions)+'</td>',
                               TableDataColRep='<td>'+phpUnserialize(repVal.reponses_recu)+'</td>',
                               TableDataColIDClient = '<td>'+repVal.idClient+'</td>',
-                              TableDataColSatisf='<td><i class="fa fa-star text-warning"></i>'+repVal.satisfaction+'</td>',
+                              TableDataColSatisf=repVal.satisfaction>0?starListPlein:starListVide,
                               TableDataColTauxSatisf="<td class='txSatisf'>20%</td>",
                               TableDataColChartSatisf="<td class='miniChart'></td>",
                               TableDataColDateAjout='<td>'+repVal.dateajout+'</td>';
-                          var AllTDRep=TableRow.append(TableDataColID).append(TableDataColQuestID).append(TableDataColRep).append(TableDataColIDClient).append(TableDataColSatisf).append(TableDataColTauxSatisf).append(TableDataColChartSatisf).append(TableDataColDateAjout);
+                        var AllTDRep=TableRow.append(TableDataColID).append(TableDataColQuestID).append(TableDataColRep).append(TableDataColIDClient).append(TableDataColSatisf).append(TableDataColTauxSatisf).append(TableDataColChartSatisf).append(TableDataColDateAjout);
 
-                          $("#tbodyReponsesTables").append(AllTDRep);
-                          
+                        $("#tbodyReponsesTables").append(AllTDRep);
+                         //$(starListVide).appendTo(".txtStar");
+
                           //$("#tbodyReponsesTables").find('.miniChart').css({"background-color":"#ffe"});
                       });
-                     $("#tbodyReponsesTables .miniChart").append(divElement);
+                      $("#tbodyReponsesTables .miniChart").append(divElement);
                   },
                   error: function(jqXHR, textStatus, ex) {
                     console.log(textStatus + "," + ex + "," + jqXHR.responseText);
                   }
           });
-          
-
         }
+
+    function chargementDesModifsDuTable(){
+
+      var starListPlein='<i class="fa fa-star text-warning"></i>';
+      var starListVide='<i class="fa fa-star "></i>';
+
+      $('.txtStar').each(function() {
+          var satisfValue = $(this).text();
+          if(satisfValue){
+              $(starListPlein).appendTo(".txtStar");
+           }/*else{
+              $(starListVide).appendTo(".txtStar");
+           }*/
+        });
+    }
 
     function sendDataToTableQuestionByAjax() {
         $.ajax({

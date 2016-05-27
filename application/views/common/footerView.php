@@ -74,7 +74,8 @@
      <!--Google MAPS -->
     <script type="text/javascript" src="//maps.google.com/maps/api/js?key=AIzaSyAZI4-du_1GaCbMG--8Ybv8z-Hhe2lFpho"></script>
 
-
+     <!--ProgressBar -->
+    <script type="text/javascript" src="<?php echo base_url('public/assets/js/plugins/bootstrap-progressbar/bootstrap-progressbar.min.js'); ?>"></script>
 
     <!-- Custom JQuery -->
     <script type="text/javascript" src="<?php echo base_url('public/assets/js/app/custom.js'); ?>"></script>
