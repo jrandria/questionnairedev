@@ -13,15 +13,13 @@ $(function() {
 	var status = new Status();
 
     moment.locale('fr').format('LLL'); //moment.js en format date français
-    $("html").niceScroll({ //On applique nicescroll
-        cursorwidth: '2px',
+    /*$("html").niceScroll({ //On applique nicescroll
+        cursorwidth: '5px',
         autohidemode: false,
         zindex: 999
-    });
+    });*/
     /*----CHARGEMENTS DES ELEMENTS-----*/
 
-    $("#menuDashboard").removeClass("active"); //Enlever la classe qui met en rouge
-    $("#menuQuestionnaires").addClass("active"); //Ajouter la classe active sur le menu 
     $('input[name="idDatePop"]').val(moment().format('DD/MMM/YYYY'));
     chargementDeTableQuestions();
     chargementDeTableReponses();
@@ -66,7 +64,7 @@ $(function() {
 	});
 
     $('#idKeywordPop').on('change', function() {
-        keywordidvalue=(this.value); // ou $(this).val()
+        keywordidvalue=(this.value);
     });
     /*------FONCTIONS POUR LES MODIFICATIONS DES CHECKBOXS DANS POP---*/
     $('input[type=checkbox]').on('change', function() {
@@ -80,15 +78,6 @@ $(function() {
     	event.preventDefault();
         sendDataToTableQuestionByAjax();
     });
-
-    /*$('tr .clickable-row').click(function (event) {
-          alert($(this).attr('id')); 
-          console.log('toto');
-    });
-
-     $("#tableListeReponses").delegate("tr .clickable-row", "click", function(){
-        alert("Click!");
-    });*/
 
      $('#tableListeReponses').on('click', 'tr', function (e) {
           var value=$(this).closest('tr').children('td:first').text();//On récupère l'id
@@ -129,9 +118,6 @@ $(function() {
                 var $AllTD=$TableRow.append($TableDataColID).append($TableDataColQuestion).append($TableDataColActif).append($TableDataColStats).append($TableDataColPart).append($TableDataColPro).append($TableDataColMotsCles).append($TableDataColDateAjout);
 
                 $("#tbodyQuestionsTables").append($AllTD);
-
-                   /* $("#tbodyQuestionsTables").append('<tr><td>'+questVal.id_question+'</td><td>'+questVal.libelle+'</td><td><div class="switch-button lg showcase-switch-button"><input id="switch-button-actifs'+questVal.id_question+'" '+checkboxCheckActif+' type="checkbox"><label for="switch-button-actifs'+questVal.id_question+'"></label></div></td><td><div class="switch-button lg primary showcase-switch-button"><input id="switch-button-stats'+questVal.id_question+'" '+isCheckBoxChecked(questVal.statusStatistiques)+' type="checkbox"><label for="switch-button-stats'+questVal.id_question+'"></label></div></td><td><div class="switch-button lg info showcase-switch-button"><input id="switch-button-particulier'+questVal.id_question+'" '+isCheckBoxChecked(questVal.statusParticulier)+' type="checkbox"><label for="switch-button-particulier'+questVal.id_question+'"></label></div></td><td><div class="switch-button lg warning showcase-switch-button"><input id="switch-button-pro'+questVal.id_question+'" '+isCheckBoxChecked(questVal.statusProfessionnel)+' type="checkbox"><label for="switch-button-pro'+questVal.id_question+'"></label></div></td><td>'+questVal.motscles+'</td><td>'+questVal.dateAjout+'</td></tr>');*/
-
                   i++;
               });
                table.dataTable({
@@ -156,23 +142,7 @@ $(function() {
       }
 
       function chargementDeTableReponses(){
-        /*$('#tableListeReponses').DataTable( {
-        "processing": true,
-        "serverSide": true,
-        "ajax": {
-            "url": "getReponsesFromDB",
-            "type": "POST"
-        },
-        "columns": [
-            { "data": "id" },
-            { "data": "idquestions" },
-            { "data": "reponses_recu" },
-            { "data": "idClient" },
-            { "data": "satisfaction" },
-            { "data": "dateajout" }
-        ]
-      });
-        */
+
           $.ajax({
                   type:'GET',
                   url: 'QuestionnaireController/sendResponsesToTable',
@@ -183,7 +153,6 @@ $(function() {
                     var starListPlein='<td><i class="fa fa-star text-warning"></i></td>';
                     var starListVide='<td><i class="fa fa-star "></i></td>';
                     //var rep = $.parseJSON(JSON.stringify(rep));
-                   console.log(rep);
                      $.each(rep, function(index, value) {
                         var repVal=rep[index];
                         var TableRow = $('<tr></tr>'),
@@ -243,28 +212,6 @@ $(function() {
             	if(res){
             		notie.alert(1, 'Insertion avec succès !', 2);
             		$('#modalCreateQuestion').modal('hide');
-            		
-            		//chargementDeTableQuestions();
-            		/*$('#tableListeQuestions').dataTable().fnDestroy();
-            		var table=$('#tableListeQuestions').DataTable({
-            			 "ajax": {
-            			 	url:"getQuestionsFromDB",
-            			 	dataSrc : ''
-            			 },
-            			 "aaData": data,
-            			 "columns": [
-						      { "data": "id_question" },
-						      { "data": "libelle" },
-						      { "data": "motscles" },
-						      { "data": "statusGenerale" },
-						      { "data": "statusStatistiques" },
-						      { "data": "statusParticulier" },
-						      { "data": "statusProfessionnel" },
-						      { "data": "dateAjout" }
-						   ]
-            		});
-            		table.ajax.reload();//Refresh du dataTable
-            		*/
             	}
             },
              error: function() {
@@ -277,8 +224,6 @@ $(function() {
         $.getJSON("getDataCategorieFromDB", function(data) {
             $('#idKeywordPop').empty();
             $.each(data, function(index, value) {
-              //$('<option value="' + data[index].motscles + '">' + data[index].motscles + '</option>"').appendTo("#idKeywordPop");
-              
               $('<option value="' + data[index].id + '">' + data[index].motscles + '</option>"').appendTo("#idKeywordPop");
             });
         });

@@ -40,6 +40,18 @@ class Util {
 		return $valBool;
 	}
 
+
+	function perform_changes_on(&$row) {
+
+       foreach ($row as $key => &$value) {
+        if($key=='idquestions' || $key== 'reponses_recu'){
+            $value=unserialize($value);
+        }
+       }
+       
+      return $row;
+    }
+
 	function printr($data) {
 	   echo "<pre>";
 	      print_r($data);

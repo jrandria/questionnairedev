@@ -31,7 +31,7 @@
                             <div class="col-lg-12">
 
 									<!--<div><h1>Questionnaire satisfaction</h1></div>-->
-									<?php echo form_open("validateResponses");?>
+									<?php echo form_open("");?>
 
 										<div class="section_question" id="question1">
 											<div class="question-header">
@@ -66,7 +66,7 @@
 														}
 														
 
-														$this->session->set_userdata('$dataidquestions', $dataidquestions);//On met temporairemenent les id et on envoi au controlleur
+														$this->session->set_userdata('$dataidquestions', $dataidquestions);//On met temporairemenent les id dans la session et on envoi au controlleur
 													}?>
 												<input id="checkServerRepID" type="text" hidden="true" value="<?php echo ''.$this->session->userdata('$reponseServer'); ?>"></input>
 												
@@ -100,30 +100,28 @@ $(function(){
 		var dataArray;
 		var pourcentage;
 
-		//Prototype Javascrit pour calculer la somme des éléments dans un tableau
-		Array.prototype.sum = function(){
-		    var sum = 0;
-		    this.map(function(item){
-		        sum += item;
-		    });
-		    return sum;
-		}
+			//Prototype Javascrit pour calculer la somme des éléments dans un tableau
+			Array.prototype.sum = function(){
+			    var sum = 0;
+			    this.map(function(item){
+			        sum += item;
+			    });
+			    return sum;
+			}
 
+			if(checkServerRep){
+				notie.alert(1, 'Questionnaire envoyé avec succès!',2);
+			}
 
-		if(checkServerRep){
-			notie.alert(1, 'Questionnaire envoyé avec succès!',2);
-		}
+			$('input[type=radio]').change(function(event) {
+				
+				totalDeMesPoints=getAllCheckedValue(event);
+				totalDeTousLesPoints=(dataArray.length)*5;
+				//On s'assure de ne pas avoir une division par zero !
+				pourcentage=(totalDeTousLesPoints!=0) ? Math.floor((totalDeMesPoints*100)/totalDeTousLesPoints) : null ;//On arrondit à la valeur inférieur
 
-
-		$('input[type=radio]').change(function(event) {
-			
-			totalDeMesPoints=getAllCheckedValue(event);
-			totalDeTousLesPoints=(dataArray.length)*5;
-			//On s'assure de ne pas avoir une division par zero !
-			pourcentage=(totalDeTousLesPoints!=0) ? Math.floor((totalDeMesPoints*100)/totalDeTousLesPoints) : null ;//On arrondit à la valeur inférieur
-
-			updateProgressBarValue(pourcentage);
-    	});
+				updateProgressBarValue(pourcentage);
+	    	});
 
     	function getAllCheckedValue(event) {
 
@@ -133,7 +131,7 @@ $(function(){
 
     		sortedObj=sortArrayObjectByKey(arrayOfCheckedValue);//On arrange par clé 
     		dataArray = extractValuesFromArrayObject(sortedObj);//on récupère seulement les valeurs 
-    		//console.log(dataArray);
+
     		var totalValuesInarray=arraySum(dataArray);
 			//console.log(dataArray.sum());
     		return dataArray.sum();
@@ -157,7 +155,6 @@ $(function(){
 		            keys.push(key);
 		        }
 		    }
-
 		    // arrangement des keys
 		    keys.sort();
 
@@ -181,6 +178,7 @@ $(function(){
 		}
 
     	function updateProgressBarValue(value) {
+
     		var $pb = $('#TauxDeProgression  .progress-bar');
 
     		if(value<50){
@@ -207,19 +205,100 @@ $(function(){
 			});
     	}
 
-		$('#submitquestionPart').on('click',function(event){
+		$('#submitquestionPart').on('click',function(event) {
 			event.preventDefault();
 
 
 			if(pourcentage !== null && pourcentage<75){
 				openModal('#modalCreateComment');
 			}else if (pourcentage !==null && pourcentage >75) {
-				alert('Client moyennement satisfait envoi de donnée au bdd'+pourcentage);
-				//window.location.replace("https://www.facebook.com/Econcept-informatique-138047422928154/?fref=ts");
+
+				dataInfosClientSatisfArray= {
+					nom :'ClientSatisfait_'+$.now(),
+					prenom :'inconnu',
+					email : 'inconnu@inconnu.fr',
+					telephone : 0123456789,
+					commentaire : 'Client satisfait'
+				};
+
+				sendReponsesDataToDB(dataInfosClientSatisfArray);
+
 				$(location).attr('href','https://www.facebook.com/Econcept-informatique-138047422928154/?fref=ts');
 			}
-
 		})
+
+		$('#submitallcomment').on('click',function(event) {
+			event.preventDefault();
+
+			dataInfosClientNotSatisfArray = {
+				nom: $("#nomclientID").val(),
+                prenom: $("#prenomclientID").val(),
+                email: $("#emailclientID").val(),
+                telephone: $("#telclientID").val(),
+                commentaire: $("#commentaireClientID").val(),
+			}
+
+			sendReponsesDataToDB(dataInfosClientNotSatisfArray);
+		})
+
+
+
+		function sendReponsesDataToDB(dataInfosClientArray) {
+
+			$.ajax({
+            type: "POST",
+            url: 'sendresponsesToDB',
+            dataType: 'json',
+            data: {
+            	token: $("input[name='token']").val(),
+                dataInfosClient:dataInfosClientArray,
+                dataReponsesSend:dataArray
+            },
+            success: function(res) {
+            	if(res){
+            		notie.alert(1, 'Merci pour votre participation !', 2);
+            		$('#modalCreateComment').modal('hide');
+            		$("#submitquestionPart").prop("disabled", true);
+            	}else{
+            		notie.alert(2, 'Des erreurs ont été rencontrés !', 4);
+            	}
+            },
+             error: function() {
+                  notie.alert(3, 'Erreur de récupération des données !', 3);
+              }
+        	});
+		}
+
+
+		function sendReponsesDataToDB_() {
+
+			$.ajax({
+            type: "POST",
+            url: 'sendresponsesToDB',
+            dataType: 'json',
+            data: {
+            	token: $("input[name='token']").val(),
+                nomclient: $("#nomclientID").val(),
+                prenomclient: $("#prenomclientID").val(),
+                emailclient: $("#emailclientID").val(),
+                telclient: $("#telclientID").val(),
+                commentaireClient: $("#commentaireClientID").val(),
+                dataReponsesSend:dataArray
+            },
+            success: function(res) {
+            	if(res){
+            		notie.alert(1, 'Merci pour votre participation !', 2);
+            		$('#modalCreateComment').modal('hide');
+            		$("#submitquestionPart").prop("disabled", true);
+            	}else{
+            		notie.alert(1, 'Des erreurs ont été rencontrés !', 4);
+            	}
+            },
+             error: function() {
+                  notie.alert(1, 'Erreur de récupération des données! !', 3);
+              }
+        	});
+		}
 
 		function openModal(element){
 		  $(element).modal();

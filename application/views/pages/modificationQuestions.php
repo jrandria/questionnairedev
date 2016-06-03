@@ -173,8 +173,8 @@
         $(document).ready(function($){
 
           /*-----POUR LES MENUS--*/
-           $("#menuDashboard").removeClass("active");//Enlever la classe qui met en rouge
-           $("#menuQuestionnaires").addClass("active");//Ajouter la classe active sur le menu 
+           //$("#menuDashboard").removeClass("active");//Enlever la classe qui met en rouge
+           $("#menuQuestionnaires").toggleClass("active");//Ajouter la classe active sur le menu 
                                                        //
           /*--APPEL AJAX pour remplir la table des questions---------*/
            // $.ajax({

@@ -32,7 +32,7 @@
 
 
                   <!--<div><h1>Questionnaire satisfaction</h1></div>-->
-                  <?php echo form_open("sendresponses");?>
+                      <?php echo form_open("sendresponses");?>
 
                                 <div class="form-group">
                                     <label class="col-lg-3 control-label">Nom</label>
@@ -64,13 +64,13 @@
                                 <div class="form-group">
                                     <label class="col-lg-3 control-label">Messages</label>
                                     <div class="col-lg-9">
-                                        <textarea class="form-control" placeholder="Laissez nous donc un message :)  ..." name="commentaireClient" style="height: 200px"></textarea>
+                                        <textarea class="form-control noresize" placeholder="Laissez nous donc un message :)  ..." name="commentaireClient" style="height: 200px"></textarea>
                                     </div>
                                 </div>
                 
                                 <div class="form-group">
                                     <div class="col-lg-9 col-lg-offset-3">
-                                        <button type="submit" id="submitquestionall" class="btn btn-info" name="submitquestion" value="valider">Valider</button>
+                                        <button type="submit" id="submitAllResponses" class="btn btn-info" name="submitquestion" value="valider">Valider</button>
                                     </div>
                                 </div>
                      </form>

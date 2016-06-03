@@ -19,7 +19,7 @@
             
             <nav class="navigation">
             	<ul class="list-unstyled">
-                	   <li id="menuDashboard" class="active"><a href=""><i class="fa fa-bookmark-o"></i><span class="nav-label">Dashboard</span></a></li>
+                	   <li id="menuDashboard"><a href=""><i class="fa fa-bookmark-o"></i><span class="nav-label">Dashboard</span></a></li>
                      <li id="menuClients" class="has-submenu"><a href=""><i class="fa fa-users"></i> <span class="nav-label">Clients</span></a></li>
                      <li id="menuQuestionnaires" class="has-submenu"><a href="modifications.html"><i class="fa fa-navicon"></i> <span class="nav-label">Questionnaires</span></a></li>
                      <li id="menuUtilisateurs" class="has-submenu"><a href="utilisateur.html"><i class="fa fa-user"></i> <span class="nav-label">Utilisateurs</span></a></li>
@@ -27,7 +27,7 @@
                         <ul class="list-unstyled">
                         </ul>
                     </li>
-                     <li id="menuParamètres" class="has-submenu"><a href="parametrage.html"><i class="fa fa-gears (alias)"></i> <span class="nav-label">Parametres</span></a>
+                     <li id="menuParametres" class="has-submenu"><a href="parametrage.html"><i class="fa fa-gears (alias)"></i> <span class="nav-label">Parametrage</span></a>
                         <ul class="list-unstyled">
                         </ul>
                     </li>

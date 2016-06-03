@@ -106,123 +106,33 @@ class QuestionnaireController extends CI_Controller {
 	}
 
 
-
-	
-	
-	/**
-	 * { Cette fonction sert à valider d'abord les reponses envoyés par le client si nécessaireS }
-	 */
-	function validate_responses(){
+	function validate_responses() {
 
 		$reponses= array();
+		$valReturnToAjax=FALSE;
 
-		$dataTest=array(1,2,3);
-		//on récupère les valeurs passées par la view : $tableau des idQuestions
-		
-		if($this->session->has_userdata('$dataidquestions')){
-			$dataidquestions = $this->session->userdata('$dataidquestions');
-		}else {
-			echo 'Attention une erreur a été détécté,veuillez contactez votre administrateur';//logs et redirection à faire
-		}
-		echo 'ID des questions :';
-		$this->util->printr($dataidquestions);
+		$dataidquestions=$this->session->has_userdata('$dataidquestions')?$this->session->userdata('$dataidquestions'):[];
 
-		$nbReponses=count($dataidquestions);
-
-		for ($i=0; $i <$nbReponses ; $i++) { 
-			$reponses[]=$this->input->post('reponse'.$i);
-		}
-
-		echo 'Réponses reçu :';
-		$this->util->printr($reponses);
-
+		$reponses=array_map(function($value){return intval($value);},$this->input->post('dataReponsesSend'));
 
 		$sanitizedReponsesData = array_filter($reponses,
 			function($var){//Callback qui enlène les valeurs null de monArray
     			return !is_null($var);
 		});
 
-		echo 'Réponses reçu nettoyé:';
-		$this->util->printr($sanitizedReponsesData);
-
-		$resultReponsesDiff = array_diff($reponses,$sanitizedReponsesData);
-
-		echo 'Réponses laissés vide:';
-		$this->util->printr($resultReponsesDiff);
-
-		echo 'ID correct sans réponses vide:';
-		$resultIdQuestionsDiff = array_intersect_key($dataidquestions,$sanitizedReponsesData);
-
-		$this->util->printr($resultIdQuestionsDiff);
-
-		echo 'pourcentage : <br />';
-		echo 'Total des réponses:'.count($sanitizedReponsesData).' et des questions :'.count($resultIdQuestionsDiff).'<br />';
-		$totalDesPointsCoches=count($sanitizedReponsesData)*5;
+		$resultIdQuestionsDiff = array_intersect_key($dataidquestions,$sanitizedReponsesData);//On enlève l'id des éléments que le client décide de ne pas répondre
 		
-		$totalDeMesPoints=array_sum($sanitizedReponsesData);
-		echo 'Total des points:'.$totalDesPointsCoches.'<br/>';
-		echo "Mes totaux de points :".$totalDeMesPoints.'<br />'; 
-		if($totalDesPointsCoches!=0){
-			echo "Ma pourcentage :".floor(($totalDeMesPoints*100)/$totalDesPointsCoches).'<br />'; 
-		}else{
-			echo "Erreur division par Zero ";
-		}
-		
-
-
-
-
-
-
-
-		//Nettoyer le tableau des réponses pour faciliter le calcul
-
-		/*
-		Le tableau des réponses (dépendents du nombre de question )
-		$nbReponses=count($dataidquestions);
-
-		for ($i=0; $i <$nbReponses ; $i++) { 
-			$reponses[]=$this->input->post('reponse'.$i);
-		}
-
-		$satisf=$this->util->isClientSatisfied($dataTest,$reponses)?1:0;
-
 		$dataResponses = array(
-			'idQuestions' => serialize($dataidquestions),
-			'reponses_recu' => serialize($reponses),
-			'satisfaction' => $satisf
+			'idQuestions' => serialize($resultIdQuestionsDiff),
+			'reponses_recu' => serialize($sanitizedReponsesData),
+			'satisfaction' => 1
 		);
 
-		print_r($dataidquestions);
-		*/
 
 
-		/*foreach ($dataResponses as $key =>  $value){
-			
-			if($key=='idQuestions'){
-				print_r(unserialize($value));
-			}
+		$dataClient=$this->input->post('dataInfosClient');
 
-		}
-
-		$this->session->set_flashdata('$dataResponses',$dataResponses);
-		$this->session->set_flashdata('$statusSatisf',$satisf);*/
-
-		//On rédirige la page dd'insertion des infos client
-		/*$data['toto']='toto';
-		$this->loadPage('create_client',0,$data);*/
-
-	}
-
-
-
-
-
-	function submitallclientresponses(){
-
-		//On stocke temporairement les données
-		$dataResponsesFlash = $this->session->userdata('$dataResponses');
-		$statusSatisfFlash = $this->session->userdata('$statusSatisf');
+		/*
 
 		$dataClient = array(
 			'nom' => $this->input->post('nomclient'),
@@ -230,21 +140,20 @@ class QuestionnaireController extends CI_Controller {
 			'email' => $this->input->post('emailclient'),
 			'telephone' => $this->input->post('telclient'),
 			'commentaire'=>$this->input->post('commentaireClient'),
-		);
+		);*/
 
-		$idClient=$this->reponsesModel->insertClient($dataClient);
-		echo "$dataResponsesFlash";
+		$idClient=$this->reponsesModel->insertClient($dataClient);//On récupère l'id du dernier client inséré
+
+		//On insère l'id du client dans la liste des réponses à envoyer
+		$dataResponsesToInsert=$this->util->array_insert_associative($dataResponses,array('idClient' => $idClient),2);
+
+		//$this->util->printr($dataResponsesToInsert);
+		if($this->reponsesModel->insertResponses($dataResponsesToInsert)){
+			$this->session->set_userdata('some_name', 'some_value');//Cr&er une valeur de session pour bloquer le formulaire si la personne a déjà envoyé
+			$valReturnToAjax=TRUE;
+		}
 		
-
-		//On insère les réponses
-		$dataResponsesToInsert=$this->util->array_insert_associative($dataResponsesFlash,array('idClient' => $idClient),2);
-
-		//print_r($dataResponsesToInsert);
-
-		$this->reponsesModel->insertResponses($dataResponsesToInsert);
-
-		$this->redirectUser($statusSatisfFlash);
-		
+		echo json_encode($dataResponsesToInsert);
 
 	}
 
@@ -297,18 +206,20 @@ class QuestionnaireController extends CI_Controller {
 		}
 		//echo json_encode(array('data' => $output));
 		echo json_encode($data);
-		
 
 	}
+
+
 	
 	function sendQuestionsToTable(){
 
 		$data=$this->questionModel->getAllQuestion();
 
 		echo json_encode($data);
-		
 
 	}
+
+
 
 	function sendQuestionsToDB(){
 
@@ -324,27 +235,31 @@ class QuestionnaireController extends CI_Controller {
 		$dataRet=$this->questionModel->insertQuestion($data);
 		echo json_encode($dataRet);
 		
-
 	}
+
+
 
 	function getDataCategorieFromDB(){
 		$data=$this->questionModel->getAllcategorie();
 		echo json_encode($data);
 	}
 
+
 	function testserialize(){
-		$mondata=$this->reponsesModel->selectAllResponses();
-		$data['mondata']=$mondata;
+
+		// $mondataOriginal=$this->reponsesModel->selectAllResponses();
+		
+		$mondataDeserialized=$this->reponsesModel->getAllUnserializedReponses();
+		$mondataRecupUtile=$this->reponsesModel->getAllReponsesByCategorieSatisfait();
+
+		// $data['mondataOriginal']=$mondataOriginal;
+		$data['mondataChanged']=$mondataDeserialized;
+		$data['mondataRecupUtile']=$mondataRecupUtile;
+
 		$this->loadPage('pagetest',0,$data);
 	}
 
-	/**
-	 * { géneration des pages}
-	 *
-	 * @param      <type>  $page   (le Nom de la page dans view)
-	 * @param      <type>  $type   (corerspond au type de la page :0 si page sans header,1 si avec header)
-	 * @param      <type>  $data   (les données à passet dans le view)
-	 */
+
 	function loadPage($page,$type,$data){//headerView contient tous les css et footerview tous les javascript
 		$this->load->view('common/headerView');
 		if($type){

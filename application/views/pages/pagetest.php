@@ -5,10 +5,8 @@
 </head>
 <body>
 	<?php 
-		echo "<pre>";
-		print_r($mondata);
-		echo "</pre>";
 
+		/*
 		for ($i=0; $i < count($mondata); $i++) { 
 						
 						foreach ($mondata[$i] as $key => $value) {
@@ -30,7 +28,7 @@
 								echo "</pre>";
 							}
 						}
-		}
+		}*/
 
 		
 	 ?>

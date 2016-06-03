@@ -1,14 +1,6 @@
-<!-- -->
-     <!--<footer class="container-fluid footer">
-          Copyright &copy; 2016 <a href="http://isad.freedom.fr/" target="_blank">Freedom</a>
-            <a href="#" class="pull-right scrollToTop"><i class="fa fa-chevron-up"></i></a>
-      </footer>
-    -->
-    
     </section>
-    <!-- Content Block Ends Here (right box)-->
-    
-    
+    <!-- Block fin -->
+
     <!-- JQuery  -->
 
     <script type="text/javascript" src="<?php echo base_url('public/assets/js/plugins/underscore/underscore-min.js'); ?>"></script>
@@ -76,6 +68,9 @@
 
      <!--ProgressBar -->
     <script type="text/javascript" src="<?php echo base_url('public/assets/js/plugins/bootstrap-progressbar/bootstrap-progressbar.min.js'); ?>"></script>
+
+    <!-- Slider -->
+    <script type="text/javascript" src="<?php echo base_url('public/assets/js/plugins/freshslider/freshslider.min.js'); ?>"></script>
 
     <!-- Custom JQuery -->
     <script type="text/javascript" src="<?php echo base_url('public/assets/js/app/custom.js'); ?>"></script>
