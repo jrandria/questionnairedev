@@ -57,7 +57,7 @@
                                           <input id="switch-button-particulierPop"  type="checkbox">
                                           <label for="switch-button-particulierPop"></label>
                                         </div>
-                                      <label for="StatusProfessionnelPop">Professionnel</label>
+                                      <label for="StatusProfessionnelPop">Pro</label>
                                         <div class="switch-button lg warning showcase-switch-button">
                                            <input id="switch-button-proPop"  type="checkbox">
                                             <label for="switch-button-proPop"></label>

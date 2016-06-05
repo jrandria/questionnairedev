@@ -55,16 +55,20 @@
                     </div>
                 </div>
             </div>
+            <div class="form-group">
+                   <?=form_hidden('base_url_name',base_url());?>
+            </div>
          <!-- PopUp Modal Pour ajout de client -->
           <?php require_once(__DIR__.'/../pop/createQuestionModal.php'); ?>
       </div>
+                
         <!-- Fin Wraper -->
 
         <!--Un petit Script de changement de lien Menu-->
+        <script type="text/javascript" src="<?php echo base_url('public/assets/js/jquery/jquery-1.9.1.min.js'); ?>"></script>
         <script type="text/javascript">
            $(function(){
             /*-----POUR LES MENUS--*/
-             $("#menuQuestionnaires").removeClass("active");//Enlever la classe qui met en rouge
              $("#menuParametres").toggleClass("active");//Ajouter la classe active sur le menu 
              
              var s0 = $("#sliderTauxMin").freshslider({

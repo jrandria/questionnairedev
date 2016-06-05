@@ -14,7 +14,6 @@ class Auth extends CI_Controller {
 		$this->lang->load('auth');
 	}
 
-	// redirect if needed, otherwise display the user list
 	function index()
 	{
 
@@ -23,9 +22,8 @@ class Auth extends CI_Controller {
 			// Redirection vers la page de login
 			redirect('login', 'refresh');//redirect('auth/login', 'refresh');
 		}
-		elseif (!$this->ion_auth->is_admin()) // remove this elseif if you want to enable this for non-admins
+		elseif (!$this->ion_auth->is_admin()) //Redirection si pas admin
 		{
-			// redirect them to the home page because they must be an administrator to view this
 			redirect('index_user','refresh');
 			return show_error('Vous devez être un administateur pour voir cette page.');
 		}
@@ -36,12 +34,16 @@ class Auth extends CI_Controller {
 
 			//list the users
 			$this->data['users'] = $this->ion_auth->users()->result();
+			$user = $this->ion_auth->user()->row();
+			$this->data['Nom']=$user->last_name;
+			$this->data['Prenom']=$user->first_name;
+
 			foreach ($this->data['users'] as $k => $user)
 			{
 				$this->data['users'][$k]->groups = $this->ion_auth->get_users_groups($user->id)->result();
 			}
 
-			$this->_render_page('auth/index', $this->data);//Page accessible uniquement si admin
+			$this->_render_page('pages/modificationQuestions', $this->data);//Page accessible uniquement si admin
 		}
 	}
 
@@ -67,20 +69,14 @@ class Auth extends CI_Controller {
 				$this->session->set_flashdata('message', $this->ion_auth->messages());
 
 				//On rédirige selon le group de l'utilisateur
-				$group_members=array('members','stagiaire');
-				$group_comm=array('comm');
-				$group_com=array('com');
+				$group_members=array('members');
 				$group_admin=array('admin');
-				$group_gerant=array('gerant');
 				$group_cor=array('cor');
 
 				if ($this->ion_auth->in_group($group_admin))
 				{
 					$this->session->set_flashdata('message', 'Cette page est destinée à un admin');
 					redirect('index_admin');
-				} elseif ($this->ion_auth->in_group($group_com)) {
-					$this->session->set_flashdata('message', 'Cette page est destinée à un admin');
-					redirect('index_com');
 				}
 
 				redirect('auth/index', 'refresh');
@@ -127,7 +123,7 @@ class Auth extends CI_Controller {
 		$this->data['Nom']=$user->last_name;
 		$this->data['Prenom']=$user->first_name;
 
-		$this->loadPage('pages/index_user',1,$this->data);
+		$this->loadPage('pages/questionnaire',1,$this->data);
 	}
 
 	// fonction de deconnexion
@@ -853,7 +849,7 @@ class Auth extends CI_Controller {
 		//$view_html = $this->load->view($view, $this->viewdata, $returnhtml);
 
 		//if ($returnhtml) return $view_html;//This will return html on 3rd argument being true
-		$this->loadPage($view,0,$this->viewdata);
+		strcmp($view,'pages/modificationQuestions')?$this->loadPage($view,0,$this->viewdata):$this->loadPage($view,1,$this->viewdata);
 	}
 
 	public function loadPage($page,$type,$data){//$type (0 pour login ou toute page qui n'a pas besoin de header/side)

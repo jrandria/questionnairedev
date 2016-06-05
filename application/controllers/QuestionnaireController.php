@@ -58,6 +58,21 @@ class QuestionnaireController extends CI_Controller {
 
 	}
 
+	function load_statistique() {
+		//Controle de la session
+		$this->index();
+		$user = $this->ion_auth->user()->row();
+		
+
+		//Récupération des données du model
+		$data['resultatArrayAllQuestion']=$this->questionModel->getAllQuestion();
+		$data['Nom']=$user->last_name;
+		$data['Prenom']=$user->first_name;
+
+		$this->loadPage('statistiques',1,$data);
+
+	}
+
 	
 	
 	/**

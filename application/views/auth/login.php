@@ -10,6 +10,9 @@
             <hr class="clean">
 
               <?php echo form_open("auth/login");?>
+                <div class="form-group">
+                   <?=form_hidden('base_url_name',base_url());?>
+                </div>
                 
                  <div class="form-group input-group">
                       <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
@@ -61,6 +64,7 @@
               <?php echo form_close();?>
 
             <p><a href="forgot_password.html"><?php echo lang('login_forgot_password');?></a></p>
+
 
         </div>
         </div>

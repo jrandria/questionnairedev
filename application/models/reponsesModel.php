@@ -75,7 +75,8 @@ Class ReponsesModel extends CI_Model
 
     }
 
-        public function getAllReponsesByCategorieSatisfait(){
+    
+    public function getAllReponsesByCategorieSatisfait(){
        
        $unserializedReponses=$this->getAllUnserializedReponses();
        $arrayFusionCategorie=array();
@@ -93,20 +94,20 @@ Class ReponsesModel extends CI_Model
             //$this->util->printr($value);
 
               for ($i=0; $i < count($value) ; $i++) { 
+                $this->util->printr($arrRep);
+
                 echo '<br\> valeur de id = '.$value[$i].'<br\>';
-
-
 
                 $arrayFusionCategorie=$this->getQuestionsById($value[$i]);
                 $this->util->printr($value);
 
-                //$this->util->printr($arrayFusionCategorie);
+                $this->util->printr($arrayFusionCategorie);
               //$this->util->printr($value);
               //$this->util->printr($arrayFusionCategorie);
               
 
              
-              $this->util->printr($arrRep);
+              
               array_splice($arrRep,-5,2,$arrayFusionCategorie);
               $this->util->printr($arrRep);
                 

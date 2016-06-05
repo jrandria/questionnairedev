@@ -2,6 +2,11 @@
 <p><?php echo lang('index_subheading');?></p>
 
 <div id="infoMessage"><?php echo $message;?></div>
+ <?php echo form_open("auth/login");?>
+    <div class="form-group">
+    	<?=form_hidden('base_url_name',base_url());?>
+    </div>
+ <?php echo form_close();?>
 
 <table cellpadding=0 cellspacing=10>
 	<tr>

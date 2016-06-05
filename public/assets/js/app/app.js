@@ -1,4 +1,5 @@
 /*--------LES VARIABLES UTILES--------*/
+var base_url = $('input[name="base_url_name"]').val();
 var Status = function() { //Object Question
     this.statusGeneraleValue = 0;
     this.statusStatistiquesValue = 0;
@@ -8,6 +9,7 @@ var Status = function() { //Object Question
 
 var keywordidvalue=1;
 var table=$('#tableListeQuestions');
+
 /*---------------------*/
 $(function() {
 	var status = new Status();
@@ -21,8 +23,6 @@ $(function() {
     /*----CHARGEMENTS DES ELEMENTS-----*/
 
     $('input[name="idDatePop"]').val(moment().format('DD/MMM/YYYY'));
-    chargementDeTableQuestions();
-    chargementDeTableReponses();
 
     /*----CHARGEMENT DES EVENTS------------*/
     $(document).on('change','input[type=checkbox]',function() {
@@ -32,24 +32,36 @@ $(function() {
         var boolChecked= this.checked;
 
         updateDataIfCheckBoxCheked(idButton,valIDElement,boolChecked);
-    });   
+    });
+
+   
+
+   $('a[href="#tabQuestions"]').on('shown.bs.tab', function(e) {
+      chargementDeTableQuestions();
+    });
+
+    $('a[href="#tabReponses"]').on('shown.bs.tab', function(e) {
+      chargementDeTableReponses();
+    });
+
+
+    $('a[data-toggle="tab"]').trigger('shown.bs.tab');
+   
 
     $('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
+      e.preventDefault();
         var target = $(e.target).attr("href") // activated tab
          
          switch(target){
          	case '#tabQuestions':
          		//chargementDeTableQuestions();
+            //table.dataTable().ajax.reload();
          	break;
          	case '#tabReponses':
-         		//
-         	break;
-         	case '#tabCategories':
-         		alert('#tabCategories');
+            chargementDeTableReponses();
          	break;
          	default:
          	 alert('Erreur détécté');
-
          } 
     });
 
@@ -79,7 +91,7 @@ $(function() {
         sendDataToTableQuestionByAjax();
     });
 
-     $('#tableListeReponses').on('click', 'tr', function (e) {
+    $('#tableListeReponses').on('click', 'tr', function (e) {
           var value=$(this).closest('tr').children('td:first').text();//On récupère l'id
 
           $('#modalviewReponses').modal();
@@ -89,10 +101,10 @@ $(function() {
     /*--APPEL AJAX pour les nouvelles questions dans la base de donnée---------*/
 
      function chargementDeTableQuestions(){
-    	            /*--APPEL AJAX pour remplir la table des questions---------*/
+
         $.ajax({
               type: "GET",
-              url:'getQuestionsFromDB',
+              url:base_url+'getQuestionsFromDB',
               dataType: 'json',
               success: function(quest) {
 
@@ -120,7 +132,13 @@ $(function() {
                 $("#tbodyQuestionsTables").append($AllTD);
                   i++;
               });
-               table.dataTable({
+               
+               table.dataTable().fnDestroy();
+
+              //table.empty();
+              table.DataTable({
+                lengthMenu: [ [5, 10, -1], [5, 10, "All"] ],
+                pageLength: 5,
                   "language": {
                     "url":"public/assets/json/French.json"
                   }
@@ -141,11 +159,11 @@ $(function() {
         });
       }
 
-      function chargementDeTableReponses(){
+      function chargementDeTableReponses() {
 
           $.ajax({
                   type:'GET',
-                  url: 'QuestionnaireController/sendResponsesToTable',
+                  url: base_url+"getReponsesFromDB",
                   datatype: 'json',
                   success: function(rep){
                     var rep = $.parseJSON(rep);
@@ -179,7 +197,7 @@ $(function() {
           });
         }
 
-    function chargementDesModifsDuTable(){
+    function chargementDesModifsDuTable() {
 
       var starListPlein='<i class="fa fa-star text-warning"></i>';
       var starListVide='<i class="fa fa-star "></i>';
@@ -261,9 +279,6 @@ $(function() {
         token: $("input[name='token']").val(),
         keywordid:parseInt(valIDElement)
       };
-
-        console.log('Id du Bouton:'+idButton+'-- ID dans la base:'+valIDElement);
-        console.info('checkBoxChecked');
         
         switch(idButton){
           case 'switch-button-actifs'+valIDElement:
@@ -314,25 +329,6 @@ $(function() {
           },
           error: function(jqXHR, exception) {
             alert('Erreur de récupération des données!'+ jqXHR.responseText);
-                  /*
-                      var msg = '';
-                      if (jqXHR.status === 0) {
-                          msg = 'Not connect.\n Verify Network.';
-                      } else if (jqXHR.status == 404) {
-                          msg = 'Requested page not found. [404]';
-                      } else if (jqXHR.status == 500) {
-                          msg = 'Internal Server Error [500].';
-                      } else if (exception === 'parsererror') {
-                          msg = 'Requested JSON parse failed.';
-                      } else if (exception === 'timeout') {
-                          msg = 'Time out error.';
-                      } else if (exception === 'abort') {
-                          msg = 'Ajax request aborted.';
-                      } else {
-                          msg = 'Uncaught Error.\n' + jqXHR.responseText;
-                      }
-                      console.log(msg);
-                  */
           }
       });
     }

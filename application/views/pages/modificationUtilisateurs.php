@@ -47,8 +47,8 @@
                                                               <?php echo anchor("auth/edit_group/".$group->id, htmlspecialchars($group->name,ENT_QUOTES,'UTF-8')) ;?><br />
                                                                     <?php endforeach?>
                                                           </td>
-                                                          <td><?php echo ($user->active) ? anchor("auth/deactivate/".$user->id, lang('index_active_link')) : anchor("auth/activate/". $user->id, lang('index_inactive_link'));?></td>
-                                                          <td><?php echo anchor("auth/edit_user/".$user->id, 'Edit') ;?></td>
+                                                          <td><?php echo ($user->active) ? anchor("auth/deactivate/".$user->id,'Désactiver') : anchor("auth/activate/". $user->id,'Activer');?></td>
+                                                          <td><?php echo anchor("auth/edit_user/".$user->id, 'Editer') ;?></td>
                                                   </tr>
                                                 <?php endforeach;?>
 
@@ -59,7 +59,7 @@
                                 <form data-ng-submit="addTodo()" role="form">
                                 <div class="input-group">
                                   <span class="input-group-btn">
-                                    <button class="btn-primary btn" type="submit" >Add</button>
+                                    <button class="btn-primary btn" type="submit" >Ajouter</button>
                                     <p><?php echo anchor('auth/create_user', lang('index_create_user_link'))?> | <?php echo anchor('auth/create_group', lang('index_create_group_link'))?></p>
                                   </span>
                                 </div>
@@ -69,11 +69,20 @@
                     </div>
                 </div>
             </div>
+           <div class="form-group">
+                   <?=form_hidden('base_url_name',base_url());?>
+          </div>
          <!-- PopUp Modal Pour ajout de client -->
           <?php require_once(__DIR__.'/../pop/createQuestionModal.php'); ?>
         </div>
         <!-- Fin Wraper -->
 
         <!--Un petit Script de changement de lien Menu-->
+          <script type="text/javascript" src="<?php echo base_url('public/assets/js/jquery/jquery-1.9.1.min.js'); ?>"></script>
         <script type="text/javascript">
+        $(document).ready(function($){
+          /*-----POUR LES MENUS--*/
+           $("#menuUtilisateurs").toggleClass("active");//Ajouter la classe active sur le menu 
+
+        });
         </script>

@@ -36,9 +36,6 @@
   <link rel="stylesheet" type="text/css" href="<?php echo base_url('public/assets/css/notie/notie.min.css');?>" /> 
 
       	<!-- Loading des Scripts Javascripts Les plus utilisés-->
-	
-    <script type="text/javascript" src="<?php echo base_url('public/assets/js/jquery/jquery-1.9.1.min.js'); ?>"></script>
-    <script type="text/javascript" src="<?php echo base_url('public/assets/js/jquery/jquery-ui-1.11.1.min.js'); ?>"></script>
 	 <!---->
 
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

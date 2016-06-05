@@ -5,6 +5,9 @@
 
 <?php echo form_open("auth/forgot_password");?>
 
+	 <div class="form-group">
+                   <?=form_hidden('base_url_name',base_url());?>
+     </div>
       <p>
       	<label for="identity"><?php echo (($type=='email') ? sprintf(lang('forgot_password_email_label'), $identity_label) : sprintf(lang('forgot_password_identity_label'), $identity_label));?></label> <br />
       	<?php echo form_input($identity);?>
